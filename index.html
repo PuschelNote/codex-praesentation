@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interaktive Präsentation über OpenAI Codex – Eigenschaften, Praxiseinsatz und Geschäftsmodell.">
+  <title>Codex — AI Tool Deep-Dive</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#start" aria-label="Zur Startfolie"><span class="brand-mark">C</span><span>CODEX / DEEP DIVE</span></a>
+    <div class="top-actions">
+      <span class="slide-count" aria-live="polite"><b id="currentSlide">01</b> / <span id="totalSlides">08</span></span>
+      <button class="icon-button" id="themeToggle" aria-label="Farbschema wechseln" title="Farbschema wechseln">◐</button>
+      <button class="menu-button" id="menuToggle" aria-expanded="false" aria-controls="chapterNav"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <nav class="chapter-nav" id="chapterNav" aria-label="Kapitel">
+    <p>Kapitel</p>
+    <ol>
+      <li><button data-target="0"><span>01</span>Start</button></li>
+      <li><button data-target="1"><span>02</span>Was ist Codex?</button></li>
+      <li><button data-target="2"><span>03</span>Oberflächen</button></li>
+      <li><button data-target="3"><span>04</span>Praxistest</button></li>
+      <li><button data-target="4"><span>05</span>Vorteile</button></li>
+      <li><button data-target="5"><span>06</span>Nachteile</button></li>
+      <li><button data-target="6"><span>07</span>Geschäftsmodell</button></li>
+      <li><button data-target="7"><span>08</span>Fazit</button></li>
+    </ol>
+    <div class="nav-hint">↑ ↓ oder Leertaste zum Navigieren</div>
+  </nav>
+
+  <main class="deck" id="deck">
+    <section class="slide hero active" id="start" data-title="Start" aria-hidden="false">
+      <div class="orb orb-one"></div><div class="orb orb-two"></div>
+      <div class="slide-inner hero-grid">
+        <div>
+          <p class="eyebrow reveal">AI TOOL DEEP-DIVE · JULI 2026</p>
+          <h1 class="reveal">Code nicht nur<br><em>vorschlagen.</em><br>Code erledigen.</h1>
+          <p class="hero-copy reveal">Codex von OpenAI ist ein agentischer Coding-Assistent, der Aufgaben selbstständig plant, umsetzt und prüft.</p>
+          <button class="primary-button reveal" data-next>Deep-Dive starten <span>→</span></button>
+        </div>
+        <div class="terminal-card reveal" aria-label="Illustration eines Codex Arbeitsablaufs">
+          <div class="terminal-head"><span></span><span></span><span></span><b>codex / task</b></div>
+          <div class="terminal-body">
+            <p><i>›</i> Baue eine interaktive Präsentation</p>
+            <p class="muted">  Analyse repository…</p>
+            <p><span class="ok">✓</span> Kontext verstanden</p>
+            <p><span class="ok">✓</span> Oberfläche implementiert</p>
+            <p><span class="ok">✓</span> Verhalten getestet</p>
+            <div class="terminal-result"><span>STATUS</span><strong>READY FOR REVIEW</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-cue">SCROLL TO EXPLORE <span>↓</span></div>
+    </section>
+
+    <section class="slide" id="definition" data-title="Was ist Codex?" aria-hidden="true">
+      <div class="slide-inner">
+        <p class="eyebrow reveal">01 · EINORDNUNG</p>
+        <div class="split-heading"><h2 class="reveal">Vom Copiloten<br>zum <em>Agenten.</em></h2><p class="lead reveal">Codex gibt nicht nur einzelne Codevorschläge. Es kann einen Auftrag als Prozess übernehmen: verstehen, planen, ausführen und verifizieren.</p></div>
+        <div class="process reveal" aria-label="Agentischer Arbeitsprozess">
+          <div><span>01</span><b>Lesen</b><small>Repository & Regeln</small></div><i>→</i>
+          <div><span>02</span><b>Planen</b><small>Aufgabe zerlegen</small></div><i>→</i>
+          <div><span>03</span><b>Handeln</b><small>Code & Terminal</small></div><i>→</i>
+          <div><span>04</span><b>Prüfen</b><small>Tests & Review</small></div>
+        </div>
+        <div class="stats reveal">
+          <article><strong data-count="4">0</strong><span>Mio.+</span><p>wöchentlich aktive Entwickler</p></article>
+          <article><strong data-count="85.5">0</strong><span>%</span><p>autonome SWE-bench-Erfolgsquote*</p></article>
+          <article><strong data-count="4">0</strong><span>×</span><p>Zugangswege, ein Agent-Kern</p></article>
+          <article><strong data-count="67000">0</strong><span>+</span><p>GitHub-Stars der Open-Source-CLI</p></article>
+        </div>
+        <p class="footnote">* Kennzahlen laut bereitgestellter Ausgangsquelle, Stand Juli 2026.</p>
+      </div>
+    </section>
+
+    <section class="slide" id="interfaces" data-title="Oberflächen" aria-hidden="true">
+      <div class="slide-inner">
+        <p class="eyebrow reveal">02 · EIGENSCHAFTEN</p>
+        <h2 class="reveal">Ein Agent. <em>Vier Orte.</em></h2>
+        <p class="lead narrow reveal">Wähle eine Oberfläche und entdecke, wo sie ihre Stärke ausspielt.</p>
+        <div class="interface-explorer reveal">
+          <div class="interface-tabs" role="tablist">
+            <button class="active" role="tab" aria-selected="true" data-interface="cli"><span>⌁</span>CLI</button>
+            <button role="tab" aria-selected="false" data-interface="desktop"><span>▦</span>Desktop</button>
+            <button role="tab" aria-selected="false" data-interface="ide"><span>⌘</span>IDE</button>
+            <button role="tab" aria-selected="false" data-interface="cloud"><span>☁</span>Cloud</button>
+          </div>
+          <div class="interface-panel" id="interfacePanel">
+            <div><p class="panel-kicker">TERMINAL-NATIV</p><h3>CLI</h3><p>Open Source und direkt im Entwicklungsfluss. Codex liest Dateien, führt Befehle aus und arbeitet mit dem lokalen Repository.</p><ul><li>Ideal für Terminal-Workflows</li><li>Installation via npm oder Homebrew</li><li>Transparenter Agent-Loop</li></ul></div>
+            <div class="mini-window"><div>$ codex</div><p>› Was möchtest du bauen?</p><span class="cursor"></span></div>
+          </div>
+        </div>
+        <div class="feature-strip reveal"><span>Repository-Verständnis</span><span>Multi-Agent-Orchestrierung</span><span>Sandboxing & Governance</span><span>Skills & Automations</span></div>
+      </div>
+    </section>
+
+    <section class="slide" id="practice" data-title="Praxistest" aria-hidden="true">
+      <div class="slide-inner">
+        <p class="eyebrow reveal">03 · PRAXISTEST</p>
+        <div class="split-heading"><h2 class="reveal">Was erledigt<br>Codex <em>wirklich?</em></h2><p class="lead reveal">Die Stärke liegt weniger im einzelnen Autocomplete – sondern in längeren, klar umrissenen Aufgaben mit überprüfbarem Ergebnis.</p></div>
+        <div class="task-board reveal">
+          <article class="task-card featured"><span class="tag">BUILD</span><div class="task-icon">↗</div><h3>Feature-Entwicklung</h3><p>Vom Architektur-Sketch bis zu CRUD, API und UI.</p><div class="meter"><i style="--value:88%"></i></div><small>Hoher Autonomiegrad</small></article>
+          <article class="task-card"><span class="tag">SCALE</span><div class="task-icon">⑂</div><h3>Batch-Arbeit</h3><p>Mehrere isolierte Tasks parallel in Worktrees bearbeiten.</p><div class="meter"><i style="--value:94%"></i></div><small>Sehr gut parallelisierbar</small></article>
+          <article class="task-card"><span class="tag">SECURE</span><div class="task-icon">◇</div><h3>Security</h3><p>Bedrohungsmodelle, Schwachstellensuche und Fix-Vorschläge.</p><div class="meter"><i style="--value:76%"></i></div><small>Review bleibt notwendig</small></article>
+          <article class="task-card"><span class="tag">BEYOND</span><div class="task-icon">✦</div><h3>Wissensarbeit</h3><p>Mit Skills auch Präsentationen, Tabellen und Recherche.</p><div class="meter"><i style="--value:71%"></i></div><small>Flexibel erweiterbar</small></article>
+        </div>
+        <div class="callout reveal"><strong>80,6 %</strong><span>der Anfragen entsprechen laut Quelle mehr als 30 Minuten menschlicher Arbeit.</span></div>
+      </div>
+    </section>
+
+    <section class="slide" id="advantages" data-title="Vorteile" aria-hidden="true">
+      <div class="slide-inner">
+        <p class="eyebrow reveal">04 · STÄRKEN</p><h2 class="reveal">Warum Teams<br><em>Tempo gewinnen.</em></h2>
+        <div class="benefit-grid reveal">
+          <article class="big"><span>01</span><h3>Parallel statt sequenziell</h3><p>Mehrere Agenten arbeiten gleichzeitig an isolierten Aufgaben. Menschen wechseln vom Tippen zum Steuern und Prüfen.</p><div class="agents"><i>A1</i><i>A2</i><i>A3</i><i>A4</i></div></article>
+          <article><span>02</span><h3>Token-effizient</h3><p>Laut Ausgangsquelle bis zu viermal weniger Tokens bei Routineaufgaben.</p></article>
+          <article><span>03</span><h3>Nahtlos</h3><p>Ein Konto verbindet CLI, IDE, Desktop und Cloud.</p></article>
+          <article><span>04</span><h3>Kontrollierbar</h3><p>Sandboxing, Freigaben, Rollen und Audit-Trails für Teams.</p></article>
+          <article><span>05</span><h3>Offene CLI</h3><p>Der quelloffene Agent-Loop schafft Transparenz und Erweiterbarkeit.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="risks" data-title="Nachteile" aria-hidden="true">
+      <div class="slide-inner">
+        <p class="eyebrow reveal">05 · GRENZEN</p>
+        <div class="split-heading"><h2 class="reveal">Autonom heißt nicht<br><em>unkontrolliert.</em></h2><p class="lead reveal">Mehr Handlungsspielraum erzeugt mehr Hebel – aber auch eine größere Angriffsfläche. Der Mensch bleibt die letzte Instanz.</p></div>
+        <div class="risk-list reveal">
+          <details open><summary><span>01</span><b>Qualität variiert</b><i>+</i></summary><p>Komplexe Refactorings brauchen häufig eine weitere Runde. Ein fertiger Diff ist ein Review-Angebot, kein Freifahrtschein.</p></details>
+          <details><summary><span>02</span><b>Kosten sind schwer vorhersehbar</b><i>+</i></summary><p>Tokenbasierte Abrechnung skaliert mit der Komplexität; ähnliche Aufgaben können sehr unterschiedliche Credits verbrauchen.</p></details>
+          <details><summary><span>03</span><b>Kontext hat Grenzen</b><i>+</i></summary><p>Große Regelwerke müssen strukturiert werden. Laut Quelle wird AGENTS.md bei 32 KiB abgeschnitten.</p></details>
+          <details><summary><span>04</span><b>Limits unterbrechen den Flow</b><i>+</i></summary><p>Rollierende Nutzungsfenster können Vielnutzer bis zur Erneuerung des Kontingents ausbremsen.</p></details>
+          <details><summary><span>05</span><b>Produkt im Wandel</b><i>+</i></summary><p>Preis- und Feature-Änderungen erschweren eine langfristig stabile Budgetplanung.</p></details>
+        </div>
+        <div class="rule reveal"><span>HUMAN IN THE LOOP</span><strong>Zugriff begrenzen → Output prüfen → Tests verlangen</strong></div>
+      </div>
+    </section>
+
+    <section class="slide" id="business" data-title="Geschäftsmodell" aria-hidden="true">
+      <div class="slide-inner">
+        <p class="eyebrow reveal">06 · GESCHÄFTSMODELL</p><h2 class="reveal">Einstieg günstig.<br><em>Nutzung skaliert.</em></h2>
+        <div class="business-layout reveal">
+          <div class="pricing">
+            <div class="pricing-head"><h3>Plan-Navigator</h3><span>Richtwerte · Quelle 07/2026</span></div>
+            <div class="plan-options" role="radiogroup">
+              <button data-plan="Free" data-price="0"><b>Free</b><span>0 $</span></button>
+              <button data-plan="Go" data-price="8"><b>Go</b><span>8 $</span></button>
+              <button class="active" data-plan="Plus" data-price="20"><b>Plus</b><span>20 $</span></button>
+              <button data-plan="Pro" data-price="100"><b>Pro</b><span>100–200 $</span></button>
+              <button data-plan="Business" data-price="20"><b>Business</b><span>ab 20 $</span></button>
+            </div>
+            <label for="seats">Teamgröße <output id="seatOutput">5 Personen</output></label>
+            <input id="seats" type="range" min="1" max="50" value="5">
+            <div class="estimate"><span>Basispreis pro Monat*</span><strong id="estimate">100 $</strong></div>
+            <small>*Ohne zusätzliche nutzungsbasierte Credits; Pro mit unterem Richtwert.</small>
+          </div>
+          <div class="revenue-model"><h3>Vier Umsatzhebel</h3><ol><li><span>01</span><div><b>Freemium-Funnel</b><p>Vom Testzugang zum Abo.</p></div></li><li><span>02</span><div><b>Token-Credits</b><p>Kosten folgen dem Modellaufwand.</p></div></li><li><span>03</span><div><b>API-Nutzung</b><p>Separater Kanal für CI/CD.</p></div></li><li><span>04</span><div><b>Enterprise</b><p>Verträge, Governance, Integratoren.</p></div></li></ol></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide finale" id="conclusion" data-title="Fazit" aria-hidden="true">
+      <div class="slide-inner">
+        <p class="eyebrow reveal">07 · FAZIT</p><h2 class="reveal">Codex ist kein<br><em>Autopilot.</em> Es ist ein<br><em>Multiplikator.</em></h2>
+        <div class="verdict reveal"><div><span>BEST FIT</span><p>Teams mit vielen klaren, parallelen Routine- und Entwicklungsaufgaben.</p></div><div><span>TRADE-OFF</span><p>Mehr Geschwindigkeit gegen variable Qualität und schwer planbare Nutzungskosten.</p></div><div><span>NON-NEGOTIABLE</span><p>Zugriffe begrenzen, Änderungen testen und jeden produktiven Output reviewen.</p></div></div>
+        <div class="quiz reveal" id="quiz"><p>Was ist die wichtigste Rolle des Menschen?</p><div><button data-correct="false">Jeden Code selbst schreiben</button><button data-correct="true">Kontext geben & Ergebnisse prüfen</button><button data-correct="false">Nur Credits verwalten</button></div><output></output></div>
+        <div class="source-line reveal"><span>Grundlage</span> Codex_OpenAI.md · Stand Juli 2026 <button data-target-slide="0">↺ Neu starten</button></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+  <div class="deck-controls">
+    <button id="prevButton" aria-label="Vorherige Folie">←</button>
+    <button id="nextButton" aria-label="Nächste Folie">→</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
