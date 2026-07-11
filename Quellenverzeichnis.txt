@@ -1,0 +1,36 @@
+Quellenverzeichnis
+
+Nutzerzahlen & Wachstum
+
+
+OpenAI Newsroom: Codex now has more than 5M weekly active users (X/Twitter, 2. Juni 2026). https://x.com/OpenAINewsroom/status/2061834718224777579
+Digital Applied: OpenAI Codex Hits 4M Weekly Developers: 2026 Growth Data (18. Mai 2026). https://www.digitalapplied.com/blog/openai-codex-4m-weekly-developers-growth-data
+Getpanto: Codex AI Statistics 2026: Users, Revenue & Growth. https://www.getpanto.ai/blog/codex-ai-statistics
+Gradually.ai: OpenAI Codex Statistics 2026: Key Numbers, Data & Facts. https://www.gradually.ai/en/codex-statistics/
+
+
+Preise & Geschäftsmodell
+5. OpenAI Developers: Pricing – Codex. https://developers.openai.com/codex/pricing
+6. OpenAI Help Center: Codex rate card. https://help.openai.com/en/articles/20001106-codex-rate-card
+7. eesel AI: OpenAI Codex pricing in 2026: every plan, real costs & what you'll pay. https://www.eesel.ai/blog/codex-pricing
+8. Automation Atlas: ChatGPT Codex Pricing (July 2026): Go, Plus, Pro, Business. https://automationatlas.io/answers/chatgpt-codex-pricing-explained-2026/
+
+Gartner-Einordnung
+9. OpenAI: OpenAI named a Leader in enterprise coding agents by Gartner (22. Mai 2026). https://openai.com/index/gartner-2026-agentic-coding-leader/
+10. ChatForest: Gartner's 2026 Magic Quadrant for Enterprise AI Coding Agents: GitHub, OpenAI, and Cursor All Lead. https://chatforest.com/reviews/gartner-magic-quadrant-2026-enterprise-ai-coding-agents-github-copilot-openai-codex-cursor/
+
+Sicherheitslücken
+11. Check Point Research: OpenAI Codex CLI Command Injection Vulnerability (CVE-2025-61260). https://research.checkpoint.com/2025/openai-codex-cli-command-injection-vulnerability/
+12. BankInfoSecurity: Codex Bug Let Repo Files Execute Hidden Commands (3. Dezember 2025). https://www.bankinfosecurity.com/codex-bug-let-repo-files-execute-hidden-commands-a-30186
+13. Cymulate Research Labs: The Race to Ship AI Tools Left Security Behind. Part 1: Sandbox Escape (Mai 2026). https://cymulate.com/blog/the-race-to-ship-ai-tools-left-security-behind-part-1-sandbox-escape/
+14. Cymulate Research Labs: When a Web Search Becomes a Backdoor: RCE in Codex CLI via Prompt Injection and Binary Hijacking on Windows (Juni 2026). https://cymulate.com/blog/codex-cli-rce-prompt-injection-mitigations/
+15. Cymulate Research Labs: When AI Tools Become the Backdoor: Zero-Click RCE via Prompt Injection (Juni 2026, git.exe-Hijacking). https://cymulate.com/blog/zero-click-rce-prompt-injection-ai-tools/
+16. PromptArmor: Configuring Codex Securely (E-Mail-Exfiltration, April 2026). https://www.promptarmor.com/resources/configuring-codex-securely-across-every-platform-and-use-case
+17. Cyber Security News: OpenAI Codex Desktop App for macOS Vulnerability Allows Attackers to Inject Indirect Prompt (CVE-2026-14898). https://cybersecuritynews.com/codex-desktop-app-for-macos-vulnerability/
+
+Technische Stabilität & Sonstiges
+18. Developers Digest: Codex in June 2026: What Changed Since the Spring Wave (Changelog-Zusammenfassung, Preisumstellung 2. April 2026). https://www.developersdigest.tech/blog/codex-changelog-june-2026
+19. GitHub Issue #30009: apply_patch fails with a windows sandbox related error. https://github.com/openai/codex/issues/30009
+20. GitHub Issue #24214: apply_patch tool ignores --add-dir whitelist and writes anywhere under --cd. https://github.com/openai/codex/issues/24214
+
+Alle Quellen zuletzt abgerufen im Juli 2026. Nutzerzahlen und Vorfallsdaten sind teils selbstberichtete Angaben von OpenAI und wurden nicht unabhängig verifiziert.

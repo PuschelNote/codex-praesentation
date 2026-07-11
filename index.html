@@ -12,7 +12,7 @@
   <header class="topbar">
     <a class="brand" href="#start" aria-label="Zur Startfolie"><span class="brand-mark">C</span><span>CODEX / DEEP DIVE</span></a>
     <div class="top-actions">
-      <span class="slide-count" aria-live="polite"><b id="currentSlide">01</b> / <span id="totalSlides">12</span></span>
+      <span class="slide-count" aria-live="polite"><b id="currentSlide">01</b> / <span id="totalSlides">11</span></span>
       <button class="icon-button" id="themeToggle" aria-label="Farbschema wechseln" title="Farbschema wechseln">◐</button>
       <button class="menu-button" id="menuToggle" aria-expanded="false" aria-controls="chapterNav"><span></span><span></span></button>
     </div>
@@ -26,13 +26,12 @@
       <li><button data-target="2"><span>03</span>Oberflächen</button></li>
       <li><button data-target="3"><span>04</span>Praxistest</button></li>
       <li><button data-target="4"><span>05</span>Vorteile</button></li>
-      <li><button data-target="5"><span>06</span>Nachteile</button></li>
+      <li><button data-target="5"><span>06</span>Technische Probleme</button></li>
       <li><button data-target="6"><span>07</span>Geschäftsmodell</button></li>
-      <li><button data-target="7"><span>08</span>Technische Probleme</button></li>
-      <li><button data-target="8"><span>09</span>Wertschöpfungskette</button></li>
-      <li><button data-target="9"><span>10</span>Fazit</button></li>
-      <li><button data-target="10"><span>11</span>Abschlussquiz</button></li>
-      <li><button data-target="11"><span>12</span>Quellen</button></li>
+      <li><button data-target="7"><span>08</span>Wertschöpfungskette</button></li>
+      <li><button data-target="8"><span>09</span>Fazit</button></li>
+      <li><button data-target="9"><span>10</span>Abschlussquiz</button></li>
+      <li><button data-target="10"><span>11</span>Quellen</button></li>
     </ol>
     <div class="nav-hint">↑ ↓ oder Leertaste zum Navigieren</div>
   </nav>
@@ -73,7 +72,7 @@
           <div><span>04</span><b>Prüfen</b><small>Tests & Review</small></div>
         </div>
         <div class="stats reveal">
-          <article><strong data-count="4">0</strong><span>Mio.+</span><p>wöchentlich aktive Entwickler</p></article>
+          <article class="activity-counter" aria-label="Mehr als vier Millionen wöchentlich aktive Entwickler, zuletzt gemeldeter Stand April 2026"><div class="activity-status"><i aria-hidden="true"></i> AKTIVITÄTSZÄHLER</div><strong data-count="4">0</strong><span>Mio.+</span><p>wöchentlich aktive Entwickler</p><small>Zuletzt gemeldeter Stand · April 2026</small></article>
           <article><strong data-count="85.5">0</strong><span>%</span><p>autonome SWE-bench-Erfolgsquote*</p></article>
           <article><strong data-count="4">0</strong><span>×</span><p>Zugangswege, ein Agent-Kern</p></article>
           <article><strong data-count="67000">0</strong><span>+</span><p>GitHub-Stars der Open-Source-CLI</p></article>
@@ -130,18 +129,19 @@
       </div>
     </section>
 
-    <section class="slide" id="risks" data-title="Nachteile" aria-hidden="true">
+    <section class="slide" id="technical-problems" data-title="Technische Probleme" aria-hidden="true">
       <div class="slide-inner">
-        <p class="eyebrow reveal">05 · GRENZEN</p>
-        <div class="split-heading"><h2 class="reveal">Autonom heißt nicht<br><em>unkontrolliert.</em></h2><p class="lead reveal">Mehr Handlungsspielraum erzeugt mehr Hebel – aber auch eine größere Angriffsfläche. Der Mensch bleibt die letzte Instanz.</p></div>
-        <div class="risk-list reveal">
-          <details open><summary><span>01</span><b>Qualität variiert</b><i>+</i></summary><p>In blinden Vergleichstests bevorzugten Reviewer Claude Code gegenüber Codex etwa 2:1. Komplexe Refactorings brauchen häufig eine weitere Runde.</p></details>
-          <details><summary><span>02</span><b>Kosten sind schwer vorhersehbar</b><i>+</i></summary><p>Seit April 2026 wird tokenbasiert und ohne Kostenvorschau abgerechnet; ein komplexer Task kann neunmal mehr Credits als ein einfacher verbrauchen.</p></details>
-          <details><summary><span>03</span><b>Kontext hat Grenzen</b><i>+</i></summary><p>Große Regelwerke müssen strukturiert werden. Laut Quelle wird AGENTS.md bei 32 KiB abgeschnitten.</p></details>
-          <details><summary><span>04</span><b>Limits unterbrechen den Flow</b><i>+</i></summary><p>Rate-Limits in rollierenden 5-Stunden-Fenstern können Vielnutzer bis zur Erneuerung des Kontingents ausbremsen.</p></details>
-          <details><summary><span>05</span><b>Produkt im Wandel</b><i>+</i></summary><p>Preis- und Feature-Änderungen erschweren eine langfristig stabile Budgetplanung.</p></details>
+        <p class="eyebrow reveal">05 · TECHNISCHE PROBLEME</p>
+        <div class="split-heading"><h2 class="reveal">Schneller ist nicht<br>automatisch <em>besser.</em></h2><p class="lead reveal">Codex kann viel Code erzeugen. Ob daraus gute Software wird, hängt weiterhin von Kontext, Testumgebung und menschlicher Kontrolle ab.</p></div>
+        <div class="problem-grid reveal">
+          <article><span>01 · ERGEBNIS</span><h3>Sieht richtig aus. Ist es aber nicht.</h3><p>Code kann laufen und trotzdem falsche Ergebnisse liefern, Sonderfälle übersehen oder andere Funktionen beschädigen.</p></article>
+          <article><span>02 · KONTEXT</span><h3>Codex weiß nur, was wir erklären.</h3><p>Fehlende Regeln führen zu unpassenden Lösungen. Große Anweisungsdateien müssen zusätzlich klar strukturiert und aufgeteilt werden.</p></article>
+          <article><span>03 · UMGEBUNG</span><h3>Cloud ist nicht gleich Produktion.</h3><p>Datenbanken, interne Dienste, Einstellungen oder echte Testdaten können im isolierten Container fehlen.</p></article>
+          <article><span>04 · ZUGRIFF</span><h3>Internet schafft Nutzen und Risiko.</h3><p>Ohne Zugriff fehlen aktuelle Informationen. Mit Zugriff steigen Gefahren durch schädliche Inhalte und Datenabfluss.</p></article>
+          <article><span>05 · UMFANG</span><h3>Große Aufgaben brauchen Planung.</h3><p>Komplexe Projekte müssen weiterhin in Architektur, Umsetzung, Tests und Review zerlegt werden.</p></article>
+          <article><span>06 · KONTROLLE</span><h3>Review wird zum Engpass.</h3><p>Qualität kann schwanken. Je schneller Codex Code erzeugt, desto mehr müssen Menschen verstehen, testen und freigeben.</p></article>
         </div>
-        <div class="rule reveal"><span>HUMAN IN THE LOOP</span><strong>Zugriff begrenzen → Output prüfen → Tests verlangen</strong></div>
+        <div class="responsibility-line reveal"><span>KERNAUSSAGE</span><strong>Codex verschiebt Arbeit vom Schreiben zum Planen, Prüfen und Verantworten.</strong><small>Die Verantwortung bleibt beim Menschen.</small></div>
       </div>
     </section>
 
@@ -162,32 +162,16 @@
             <label for="seats">Teamgröße <output id="seatOutput">5 Personen</output></label>
             <input id="seats" type="range" min="1" max="50" value="5">
             <div class="estimate"><span>Basispreis pro Monat*</span><strong id="estimate">100 $</strong></div>
-            <small id="estimateNote">*Ohne zusätzliche nutzungsbasierte Credits.</small>
+            <small id="estimateNote">*Ohne zusätzliche nutzungsbasierte Credits; komplexe Aufgaben können deutlich mehr verbrauchen.</small>
           </div>
           <div class="revenue-model"><h3>Vier Umsatzhebel</h3><ol><li><span>01</span><div><b>Freemium-Funnel</b><p>Free/Go führen zu Plus und Pro.</p></div></li><li><span>02</span><div><b>Token-Credits</b><p>Input, Cache und Output zählen.</p></div></li><li><span>03</span><div><b>API-Nutzung</b><p>Separater Kanal für CI/CD.</p></div></li><li><span>04</span><div><b>Enterprise</b><p>Verträge plus Systemintegratoren.</p></div></li></ol></div>
         </div>
       </div>
     </section>
 
-    <section class="slide" id="technical-problems" data-title="Technische Probleme" aria-hidden="true">
-      <div class="slide-inner">
-        <p class="eyebrow reveal">07 · TECHNISCHE PROBLEME</p>
-        <div class="split-heading"><h2 class="reveal">Schneller ist nicht<br>automatisch <em>besser.</em></h2><p class="lead reveal">Codex kann viel Code erzeugen. Ob daraus gute Software wird, hängt weiterhin von Kontext, Testumgebung und menschlicher Kontrolle ab.</p></div>
-        <div class="problem-grid reveal">
-          <article><span>01 · ERGEBNIS</span><h3>Sieht richtig aus. Ist es aber nicht.</h3><p>Code kann laufen und trotzdem falsche Ergebnisse liefern, Sonderfälle übersehen oder andere Funktionen beschädigen.</p></article>
-          <article><span>02 · KONTEXT</span><h3>Codex weiß nur, was wir erklären.</h3><p>Fehlende Regeln, Geschäftslogik oder Projektinformationen führen schnell zu unpassenden Lösungen.</p></article>
-          <article><span>03 · UMGEBUNG</span><h3>Cloud ist nicht gleich Produktion.</h3><p>Datenbanken, interne Dienste, Einstellungen oder echte Testdaten können im isolierten Container fehlen.</p></article>
-          <article><span>04 · ZUGRIFF</span><h3>Internet schafft Nutzen und Risiko.</h3><p>Ohne Zugriff fehlen aktuelle Informationen. Mit Zugriff steigen Gefahren durch schädliche Inhalte und Datenabfluss.</p></article>
-          <article><span>05 · UMFANG</span><h3>Große Aufgaben brauchen Planung.</h3><p>Komplexe Projekte müssen weiterhin in Architektur, Umsetzung, Tests und Review zerlegt werden.</p></article>
-          <article><span>06 · KONTROLLE</span><h3>Review wird zum Engpass.</h3><p>Je schneller Codex Code erzeugt, desto mehr Ergebnisse müssen Menschen verstehen, testen und freigeben.</p></article>
-        </div>
-        <div class="responsibility-line reveal"><span>KERNAUSSAGE</span><strong>Codex verschiebt Arbeit vom Schreiben zum Planen, Prüfen und Verantworten.</strong><small>Die Verantwortung bleibt beim Menschen.</small></div>
-      </div>
-    </section>
-
     <section class="slide" id="value-chain" data-title="Wertschöpfungskette" aria-hidden="true">
       <div class="slide-inner">
-        <p class="eyebrow reveal">08 · PORTER-WERTSCHÖPFUNGSKETTE</p>
+        <p class="eyebrow reveal">07 · PORTER-WERTSCHÖPFUNGSKETTE</p>
         <div class="split-heading"><h2 class="reveal">Wo entsteht<br><em>Wert?</em></h2><div class="lead-block reveal"><p class="lead">Porters Modell macht sichtbar, wie Codex aus Daten und Rechenleistung ein digitales Produkt und schließlich Kundennutzen erzeugt.</p></div></div>
         <div class="chain-explorer reveal">
           <div class="chain-map" role="tablist" aria-label="Bereiche der Wertschöpfungskette">
@@ -213,7 +197,7 @@
 
     <section class="slide finale" id="conclusion" data-title="Fazit" aria-hidden="true">
       <div class="slide-inner">
-        <p class="eyebrow reveal">09 · FAZIT</p><h2 class="reveal">Codex ist kein<br><em>Autopilot.</em> Es ist ein<br><em>Multiplikator.</em></h2>
+        <p class="eyebrow reveal">08 · FAZIT</p><h2 class="reveal">Codex ist kein<br><em>Autopilot.</em> Es ist ein<br><em>Multiplikator.</em></h2>
         <div class="verdict reveal"><div><span>BEST FIT</span><p>Teams mit vielen Routine- und Parallelisierungsaufgaben, die Tempo über Erstentwurf-Perfektion stellen.</p></div><div><span>EINSTIEG</span><p>Das Plus-Abo für 20 $ pro Monat reicht für einen ersten ausführlichen Test.</p></div><div><span>NON-NEGOTIABLE</span><p>Codex als privilegierte Identität behandeln: Zugriffe scopen, testen und Output reviewen.</p></div></div>
         <div class="source-line reveal"><span>TAKE-AWAY</span> Automatisierung ersetzt nicht die Verantwortung.</div>
       </div>
@@ -221,7 +205,7 @@
 
     <section class="slide quiz-slide" id="closing-quiz" data-title="Abschlussquiz" aria-hidden="true">
       <div class="slide-inner">
-        <p class="eyebrow reveal">10 · ABSCHLUSSQUIZ</p>
+        <p class="eyebrow reveal">09 · ABSCHLUSSQUIZ</p>
         <div class="split-heading"><h2 class="reveal">Codex-Check:<br><em>richtig oder falsch?</em></h2><p class="lead reveal">Drei Aussagen, zwei Möglichkeiten. Das Publikum stimmt ab – anschließend wird die Antwort direkt aufgelöst.</p></div>
         <div class="quiz-game reveal" id="finalQuiz">
           <article data-answer="false"><span>01</span><p>Codex übernimmt die Verantwortung für den erzeugten Code.</p><div><button data-choice="true">Richtig</button><button data-choice="false">Falsch</button></div><output>Falsch: Verantwortlich bleibt der Mensch beziehungsweise das Unternehmen.</output></article>
@@ -234,16 +218,41 @@
 
     <section class="slide sources-slide" id="sources" data-title="Quellen" aria-hidden="true">
       <div class="slide-inner">
-        <p class="eyebrow reveal">11 · QUELLEN</p>
-        <div class="split-heading"><h2 class="reveal">Grundlage<br>des <em>Deep-Dives.</em></h2><p class="lead reveal">Verwendete Produktinformationen, Preisangaben, technische Dokumentation und projektinterne Arbeitsgrundlagen. Stand: Juli 2026.</p></div>
-        <div class="sources-grid reveal">
-          <a href="https://openai.com/codex/" target="_blank" rel="noopener noreferrer"><span>01 · PRODUKT</span><h3>OpenAI Codex</h3><p>Produktübersicht, Funktionen und Einsatzbereiche.</p><b>openai.com/codex ↗</b></a>
-          <a href="https://developers.openai.com/codex/pricing/" target="_blank" rel="noopener noreferrer"><span>02 · PREISE</span><h3>Codex Pricing</h3><p>Pläne, Nutzungslimits und Abrechnungsmodell.</p><b>developers.openai.com ↗</b></a>
-          <a href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer"><span>03 · CODE</span><h3>Open-Source-CLI</h3><p>Repository, Releases, Issues und Community.</p><b>github.com/openai/codex ↗</b></a>
-          <article><span>04 · MARKT</span><h3>Gartner & Praxistests</h3><p>Markteinordnung, Tool-Vergleiche und unabhängige Erfahrungsberichte.</p><b>Stand Juli 2026</b></article>
-          <article><span>05 · INHALT</span><h3>Codex_OpenAI.md</h3><p>Inhaltliche Hauptquelle und Struktur der Präsentation.</p><b>Projektdatei</b></article>
-          <article><span>06 · ARBEITSGRUNDLAGEN</span><h3>Lokale Vorlagen</h3><p>„Technische Probleme.txt“ und „Vorteile.png“ als Vorlagen für die Foliengestaltung.</p><b>Projektdateien</b></article>
+        <p class="eyebrow reveal">10 · QUELLEN</p>
+        <div class="split-heading"><h2 class="reveal">Grundlage<br>des <em>Deep-Dives.</em></h2><p class="lead reveal">20 verwendete Quellen zu Nutzerzahlen, Preisen, Markteinordnung, Sicherheit und technischer Stabilität. Die Bereiche lassen sich einzeln aufklappen.</p></div>
+        <div class="source-groups reveal">
+          <details open><summary><span>01</span><b>Nutzerzahlen & Wachstum</b><small>4 Quellen</small><i>+</i></summary><ol>
+            <li><a href="https://x.com/OpenAINewsroom/status/2061834718224777579" target="_blank" rel="noopener noreferrer">OpenAI Newsroom: mehr als 5 Mio. wöchentlich aktive Nutzer</a><small>2. Juni 2026</small></li>
+            <li><a href="https://www.digitalapplied.com/blog/openai-codex-4m-weekly-developers-growth-data" target="_blank" rel="noopener noreferrer">Digital Applied: Codex Hits 4M Weekly Developers</a><small>18. Mai 2026</small></li>
+            <li><a href="https://www.getpanto.ai/blog/codex-ai-statistics" target="_blank" rel="noopener noreferrer">Getpanto: Codex AI Statistics 2026</a></li>
+            <li><a href="https://www.gradually.ai/en/codex-statistics/" target="_blank" rel="noopener noreferrer">Gradually.ai: OpenAI Codex Statistics 2026</a></li>
+          </ol></details>
+          <details><summary><span>02</span><b>Preise & Geschäftsmodell</b><small>4 Quellen</small><i>+</i></summary><ol>
+            <li><a href="https://developers.openai.com/codex/pricing" target="_blank" rel="noopener noreferrer">OpenAI Developers: Pricing – Codex</a></li>
+            <li><a href="https://help.openai.com/en/articles/20001106-codex-rate-card" target="_blank" rel="noopener noreferrer">OpenAI Help Center: Codex rate card</a></li>
+            <li><a href="https://www.eesel.ai/blog/codex-pricing" target="_blank" rel="noopener noreferrer">eesel AI: OpenAI Codex pricing in 2026</a></li>
+            <li><a href="https://automationatlas.io/answers/chatgpt-codex-pricing-explained-2026/" target="_blank" rel="noopener noreferrer">Automation Atlas: ChatGPT Codex Pricing</a><small>Juli 2026</small></li>
+          </ol></details>
+          <details><summary><span>03</span><b>Gartner-Einordnung</b><small>2 Quellen</small><i>+</i></summary><ol>
+            <li><a href="https://openai.com/index/gartner-2026-agentic-coding-leader/" target="_blank" rel="noopener noreferrer">OpenAI: Leader in enterprise coding agents by Gartner</a><small>22. Mai 2026</small></li>
+            <li><a href="https://chatforest.com/reviews/gartner-magic-quadrant-2026-enterprise-ai-coding-agents-github-copilot-openai-codex-cursor/" target="_blank" rel="noopener noreferrer">ChatForest: Gartner Magic Quadrant 2026</a></li>
+          </ol></details>
+          <details><summary><span>04</span><b>Sicherheitslücken</b><small>7 Quellen</small><i>+</i></summary><ol>
+            <li><a href="https://research.checkpoint.com/2025/openai-codex-cli-command-injection-vulnerability/" target="_blank" rel="noopener noreferrer">Check Point: Codex CLI Command Injection</a></li>
+            <li><a href="https://www.bankinfosecurity.com/codex-bug-let-repo-files-execute-hidden-commands-a-30186" target="_blank" rel="noopener noreferrer">BankInfoSecurity: Repo Files Execute Hidden Commands</a></li>
+            <li><a href="https://cymulate.com/blog/the-race-to-ship-ai-tools-left-security-behind-part-1-sandbox-escape/" target="_blank" rel="noopener noreferrer">Cymulate: Sandbox Escape</a></li>
+            <li><a href="https://cymulate.com/blog/codex-cli-rce-prompt-injection-mitigations/" target="_blank" rel="noopener noreferrer">Cymulate: RCE via Prompt Injection</a></li>
+            <li><a href="https://cymulate.com/blog/zero-click-rce-prompt-injection-ai-tools/" target="_blank" rel="noopener noreferrer">Cymulate: Zero-Click RCE</a></li>
+            <li><a href="https://www.promptarmor.com/resources/configuring-codex-securely-across-every-platform-and-use-case" target="_blank" rel="noopener noreferrer">PromptArmor: Configuring Codex Securely</a></li>
+            <li><a href="https://cybersecuritynews.com/codex-desktop-app-for-macos-vulnerability/" target="_blank" rel="noopener noreferrer">Cyber Security News: macOS Prompt-Injection</a></li>
+          </ol></details>
+          <details><summary><span>05</span><b>Technische Stabilität</b><small>3 Quellen</small><i>+</i></summary><ol>
+            <li><a href="https://www.developersdigest.tech/blog/codex-changelog-june-2026" target="_blank" rel="noopener noreferrer">Developers Digest: Codex in June 2026</a></li>
+            <li><a href="https://github.com/openai/codex/issues/30009" target="_blank" rel="noopener noreferrer">GitHub Issue #30009: Windows sandbox error</a></li>
+            <li><a href="https://github.com/openai/codex/issues/24214" target="_blank" rel="noopener noreferrer">GitHub Issue #24214: apply_patch whitelist</a></li>
+          </ol></details>
         </div>
+        <p class="source-disclaimer reveal">Alle Quellen zuletzt im Juli 2026 abgerufen. Nutzerzahlen und Vorfallsdaten sind teilweise selbstberichtete Angaben und wurden nicht unabhängig verifiziert.</p>
         <div class="source-line reveal"><span>ENDE</span> Vielen Dank für die Aufmerksamkeit. <button data-target-slide="0">↺ Präsentation neu starten</button></div>
       </div>
     </section>
