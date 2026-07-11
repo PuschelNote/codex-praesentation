@@ -1,0 +1,95 @@
+
+
+Technische Probleme von Codex
+1. Fehlerhafter oder nur scheinbar korrekter Code
+
+Codex kann Code erzeugen, der logisch aussieht und ohne Syntaxfehler läuft, aber dennoch:
+
+fachlich falsche Ergebnisse liefert,
+Sonderfälle nicht berücksichtigt,
+bestehende Funktionen beschädigt,
+Sicherheitslücken oder unnötige Abhängigkeiten einführt.
+
+Deshalb empfiehlt OpenAI ausdrücklich, Tests auszuführen, Änderungen zu prüfen und Codex nur als zusätzlichen Reviewer einzusetzen – nicht als Ersatz für menschliche Kontrolle.
+
+2. Abhängigkeit vom Projektkontext
+
+Codex kennt Anforderungen, Geschäftslogik und interne Regeln nur, wenn diese im Repository, in AGENTS.md oder im Prompt ausreichend beschrieben sind. Ein falsches Arbeitsverzeichnis, fehlende Tools oder unvollständige Anweisungen können zu schlechten Ergebnissen führen. OpenAI berichtet selbst, dass Projekte zunächst langsam vorankamen, weil die Entwicklungsumgebung für den Agenten nicht ausreichend definiert war.
+
+3. Probleme mit der Entwicklungsumgebung
+
+Die Codex-Cloud arbeitet in einem isolierten Container und nicht automatisch in exakt derselben Umgebung wie das spätere Produktivsystem. Dadurch können Fehler entstehen, wenn beispielsweise:
+
+Datenbanken oder interne Systeme fehlen,
+Betriebssysteme unterschiedlich sind,
+Umgebungsvariablen falsch gesetzt wurden,
+Abhängigkeiten nicht korrekt installiert sind,
+Tests nur mit vereinfachten Testdaten durchgeführt werden.
+
+Geheimnisse wie API-Schlüssel stehen in Cloud-Umgebungen aus Sicherheitsgründen während der eigentlichen Agentenphase grundsätzlich nicht zur Verfügung.
+
+4. Eingeschränkter Internetzugriff
+
+Der Internetzugriff ist standardmäßig deaktiviert. Das schützt zwar Daten, kann Codex aber daran hindern:
+
+aktuelle Dokumentationen abzurufen,
+externe APIs zu testen,
+Abhängigkeiten nachzuinstallieren,
+Fehler in externen Diensten nachzustellen.
+
+Wird der Internetzugriff freigegeben, steigen umgekehrt die Risiken durch schädliche Inhalte, Prompt Injection oder Datenabfluss.
+
+5. Schwierigkeiten bei großen Aufgaben
+
+Komplexe Aufträge wie „Erstelle eine vollständige Anwendung“ sind häufig zu unspezifisch. Größere Projekte müssen weiterhin in kleinere Schritte wie Architektur, Implementierung, Tests und Review zerlegt werden. Codex beseitigt damit nicht die Notwendigkeit von Projektplanung.
+
+6. Kontrolle wird zum Engpass
+
+Wenn Codex sehr schnell viel Code erzeugt, muss dieser Code auch geprüft werden. OpenAI beschreibt selbst, dass bei hoher Codeproduktion die menschliche Qualitätssicherung zum Engpass werden kann.
+
+Kritische Perspektive auf Codex
+Verlagerung statt vollständiger Automatisierung
+
+Codex ersetzt Entwicklungsarbeit nicht vollständig. Die Arbeit verschiebt sich:
+
+Vor Codex	Mit Codex
+Code selbst schreiben	Anforderungen präzise formulieren
+Fehler selbst suchen	KI-Ergebnisse kontrollieren
+Einzelne Funktionen implementieren	Änderungen und Abhängigkeiten überblicken
+Technische Entscheidungen treffen	KI-Vorschläge bewerten
+
+Die zentrale Kritik lautet daher:
+
+Codex automatisiert vor allem die Codeerstellung, nicht aber Verantwortung, Qualitätskontrolle und fachliche Entscheidungen.
+
+Verantwortungsproblem
+
+Wenn Codex fehlerhaften Code erstellt, trägt nicht die KI die Verantwortung, sondern weiterhin der Entwickler oder das Unternehmen, das den Code freigibt. Besonders kritisch ist das bei:
+
+Zahlungs- und Finanzsystemen,
+personenbezogenen Daten,
+medizinischer Software,
+sicherheitsrelevanten Anwendungen.
+Gefahr der Überabhängigkeit
+
+Entwickler könnten Änderungen übernehmen, ohne sie vollständig zu verstehen. Langfristig kann dies zu folgenden Problemen führen:
+
+Verlust eigener Programmier- und Debuggingfähigkeiten,
+schwer wartbarem Code,
+wachsender technischer Verschuldung,
+Abhängigkeit von einem einzelnen Anbieter.
+Produktivität ist nicht automatisch Qualität
+
+Mehr erzeugter Code bedeutet nicht automatisch bessere Software. Codex kann die Entwicklung beschleunigen, gleichzeitig aber mehr Prüfungs-, Test- und Wartungsaufwand erzeugen. Der relevante Maßstab ist daher nicht die Menge des generierten Codes, sondern ob die Software langfristig korrekt, sicher und verständlich bleibt.
+
+Geeignete Folie für deine Präsentation
+Grenzen und kritische Perspektive
+Ergebnisse können plausibel, aber trotzdem falsch sein
+Qualität hängt stark von Prompt, Kontext und Testumgebung ab
+Internet- und Systemzugriffe erzeugen einen Konflikt zwischen Funktionalität und Sicherheit
+Menschliche Tests und Code-Reviews bleiben notwendig
+Verantwortung kann nicht an Codex übertragen werden
+Gefahr von Abhängigkeit und Kompetenzverlust
+
+Kernaussage:
+Codex ersetzt Entwickler nicht, sondern verschiebt ihre Arbeit vom Schreiben zum Planen, Prüfen und Verantworten.

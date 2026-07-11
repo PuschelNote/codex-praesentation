@@ -113,7 +113,24 @@ function calculate(){
 seats.addEventListener('input',calculate);
 document.querySelectorAll('[data-plan]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-plan]').forEach(x=>x.classList.toggle('active',x===b));selectedPlan=b;calculate()}));
 
-document.querySelectorAll('#quiz button').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('#quiz button').forEach(b=>b.classList.remove('correct','wrong'));const correct=button.dataset.correct==='true';button.classList.add(correct?'correct':'wrong');document.querySelector('#quiz output').value=correct?'Genau: Der Mensch setzt Leitplanken und verantwortet den Review.':'Fast – die zentrale Rolle ist Kontext geben und Ergebnisse prüfen.'}));
+const quizCards=[...document.querySelectorAll('#finalQuiz article')];
+function updateQuizScore(){
+  const correct=quizCards.filter(card=>card.dataset.result==='correct').length;
+  document.getElementById('quizScore').textContent=`${correct} / ${quizCards.length}`;
+}
+quizCards.forEach(card=>card.querySelectorAll('[data-choice]').forEach(button=>button.addEventListener('click',()=>{
+  if(card.dataset.result)return;
+  const correct=button.dataset.choice===card.dataset.answer;
+  card.dataset.result=correct?'correct':'wrong';
+  button.classList.add(correct?'correct':'wrong');
+  card.querySelectorAll('button').forEach(b=>b.disabled=true);
+  card.querySelector('output').classList.add('visible');
+  updateQuizScore();
+})));
+document.getElementById('quizReset').addEventListener('click',()=>{
+  quizCards.forEach(card=>{delete card.dataset.result;card.querySelectorAll('button').forEach(b=>{b.disabled=false;b.classList.remove('correct','wrong')});card.querySelector('output').classList.remove('visible')});
+  updateQuizScore();
+});
 
 document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.documentElement.dataset.theme==='dark';document.documentElement.dataset.theme=dark?'light':'dark';localStorage.setItem('codex-theme',dark?'light':'dark')});
 document.documentElement.dataset.theme=localStorage.getItem('codex-theme')||'light';

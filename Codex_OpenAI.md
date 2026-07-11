@@ -58,15 +58,15 @@ Stand: Juli 2026
 
 ## 4. Vorteile
 
-*Warum Teams von der Testskepsis zum Alltagswerkzeug wechseln*
+*Warum Codex mehr als Code schreibt*
 
-- **Hohe Token-Effizienz** – nutzt laut Tests bis zu 4x weniger Tokens als vergleichbare Agenten bei Routineaufgaben – schneller & günstiger pro Task.
-- **Echte Parallelisierung** – mehrere Agenten arbeiten gleichzeitig an isolierten Worktrees; Vielnutzer erzeugen über 60 Std. Agent-Laufzeit pro Tag.
-- **Ein Konto, viele Oberflächen** – CLI, IDE, Desktop-App und Cloud teilen sich Sitzungsverlauf und Konfiguration – nahtloser Wechsel zwischen Kontexten.
-- **Enterprise-taugliche Kontrollen** – Sandboxing, Approval-Gates, RBAC und Audit-Trails; von Gartner 2026 als Leader für Enterprise AI Coding Agents gelistet.
-- **Offener Quellcode der CLI** – über 400 externe Contributors können den Agent-Loop einsehen und mitgestalten – hohe Transparenz.
-- **Niedriger Einstiegspreis** – bereits im ChatGPT-Plus-Abo (20 $/Monat) enthalten – kein separates Tool-Abo nötig.
+- **Delegieren statt vervollständigen** - Codex bearbeitet vollständige Entwicklungsaufgaben - von der Analyse über die Umsetzung bis zu Tests und Review.
+- **Projekt statt Einzelprompt** – versteht Repository, Architektur, Konventionen und bestehende Abhängigkeiten.
+- **Parallel statt sequenziell** – Mehrere Agenten bearbeiten unabhängige Aufgaben gelichzeitig.
+- **Nicht nur Schreiben. Prüfen.** – Führt Befehle und Tests aus und verbessert Ergebnisse auf Basis der Rückmeldungen.
+- **Im Workflow statt daneben** – Direkte Nutzung über IDE, CLI, Desktop, Cloud und Repository.
 
+Plan - Code - Test - Review
 ---
 
 ## 5. Nachteile
@@ -110,25 +110,20 @@ Stand: Juli 2026
 
 ## 7. Technische Probleme
 
-*Von normalen Wachstumsschmerzen bis zu strukturellen Sicherheitslücken*
+*Schneller entwickeln bedeutet nicht automatisch bessere Software*
 
-### Stabilität & Infrastruktur
+- **Plausibel, aber falsch** – Code kann korrekt aussehen und trotzdem falsche Ergebnisse liefern, Sonderfälle übersehen oder bestehende Funktionen beschädigen.
+- **Abhängig vom Kontext** – Codex kennt Geschäftslogik, Regeln und Architektur nur, wenn sie im Repository, in `AGENTS.md` oder im Prompt verständlich beschrieben sind.
+- **Andere Entwicklungsumgebung** – Cloud-Container unterscheiden sich oft vom Produktivsystem. Datenbanken, interne Dienste, Umgebungsvariablen oder echte Testdaten können fehlen.
+- **Internet oder Sicherheit** – ohne Internet fehlen aktuelle Dokumentation und externe Dienste. Mit Internetzugriff steigen Risiken wie Prompt Injection und Datenabfluss.
+- **Große Aufgaben bleiben schwierig** – unspezifische Aufträge müssen weiterhin in Architektur, Umsetzung, Tests und Review zerlegt werden. Projektplanung bleibt notwendig.
+- **Kontrolle wird zum Engpass** – je schneller Codex Code erzeugt, desto mehr müssen Menschen prüfen. Mehr Code bedeutet nicht automatisch mehr Qualität.
 
-- **Wiederkehrende Incidents** – Ende Juni 2026 verbrauchten Nutzungslimits schneller als erwartet Credits; Ursache war ein fehlerhaftes Anti-Fraud-System, das Accounts fälschlich drosselte.
-- **FedRAMP-Ausfälle** – seit Anfang Juli 2026 laufende, noch ungelöste Störungen in FedRAMP-Workspaces (Codex, Analytics, Compliance-Logs).
-- **Häufige Alltags-Bugs** – WebSocket-Verbindungsabbrüche, Tool-Calling-Fehler, Modell-Metadaten-Mismatches bei neuen Modellversionen, Windows-spezifische Bugs in der Desktop-App (täglich mehrere neue GitHub-Issues).
+### Kritische Perspektive
 
-### Sicherheitslücken – der gravierendste Problemblock
+Codex ersetzt Entwicklungsarbeit nicht vollständig, sondern verschiebt sie: vom Schreiben zum präzisen Planen, Prüfen und Verantworten. Fehlerhaften Code verantwortet weiterhin der Mensch beziehungsweise das Unternehmen, das ihn freigibt. Eine zu starke Abhängigkeit kann außerdem Verständnis, Debugging-Fähigkeiten und langfristige Wartbarkeit schwächen.
 
-- **CVE-2025-61260** – Command-Injection über implizit vertraute Projekt-Konfigurationen; erlaubte Befehlsausführung ohne Nutzerfreigabe.
-- **BeyondTrust-Disclosure (Dez. 2025)** – GitHub-Zugriffstoken-Diebstahl über einen präparierten Branch-Namen mit unsichtbaren Unicode-Zeichen; betraf ChatGPT-Web, CLI, SDK und IDE-Extension gleichzeitig. Wurde gepatcht.
-- **Sandbox-Escape via `apply_patch`** (Cymulate, Mai 2026) – fehlende Zugriffskontrolle erlaubte das Überschreiben der eigenen `.codex`-Sicherheitskonfiguration, ausgelöst durch indirekte Prompt-Injection (z. B. via README). OpenAI schloss den Bericht als „informational", ohne das Kernproblem zu beheben.
-- **Windows-RCE über `web.run`** – eine präparierte, indexierte Webseite konnte über die Websuche-Funktion Code außerhalb der Sandbox ausführen, ganz ohne weitere Nutzerinteraktion. Von OpenAI als „nicht reproduzierbar" abgelehnt.
-- **git.exe-Hijacking (Windows Desktop App)** – bösartige `git.exe` im Projektordner wird automatisch mit Entwicklerrechten ausgeführt. Von OpenAI als „Not Applicable" abgelehnt.
-- **E-Mail-Exfiltration** (April 2026, PromptArmor) – indirekte Prompt-Injection in der Codex-Desktop-App konnte sensible E-Mails ohne Nutzerinteraktion abgreifen, im Standard-Berechtigungsmodus.
-- Übergeordnet zeigen Forscher (z. B. der „Friendly Fire"-Exploit des AI Now Institute), dass auch KI-gestützte Auto-Approval-Klassifizierer gezielt mit gefälschten „harmlosen" Binärdateien getäuscht werden können.
-
-**Kurzfazit:** Funktionale Bugs sind normale Wachstumsschmerzen eines schnell iterierenden Tools. Die Sicherheitsbefunde sind strukturell – die Grenze zwischen „Daten, die der Agent liest" und „Befehle, die er ausführt" ist durchlässig, und mehrere gemeldete Schwachstellen wurden von OpenAI als „out of scope" oder „nicht reproduzierbar" abgelehnt.
+**Kernaussage:** Codex automatisiert Codeerstellung, nicht Verantwortung, Qualitätskontrolle oder fachliche Entscheidungen.
 
 ---
 

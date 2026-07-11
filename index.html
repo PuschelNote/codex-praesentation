@@ -12,7 +12,7 @@
   <header class="topbar">
     <a class="brand" href="#start" aria-label="Zur Startfolie"><span class="brand-mark">C</span><span>CODEX / DEEP DIVE</span></a>
     <div class="top-actions">
-      <span class="slide-count" aria-live="polite"><b id="currentSlide">01</b> / <span id="totalSlides">10</span></span>
+      <span class="slide-count" aria-live="polite"><b id="currentSlide">01</b> / <span id="totalSlides">12</span></span>
       <button class="icon-button" id="themeToggle" aria-label="Farbschema wechseln" title="Farbschema wechseln">◐</button>
       <button class="menu-button" id="menuToggle" aria-expanded="false" aria-controls="chapterNav"><span></span><span></span></button>
     </div>
@@ -31,6 +31,8 @@
       <li><button data-target="7"><span>08</span>Technische Probleme</button></li>
       <li><button data-target="8"><span>09</span>Wertschöpfungskette</button></li>
       <li><button data-target="9"><span>10</span>Fazit</button></li>
+      <li><button data-target="10"><span>11</span>Abschlussquiz</button></li>
+      <li><button data-target="11"><span>12</span>Quellen</button></li>
     </ol>
     <div class="nav-hint">↑ ↓ oder Leertaste zum Navigieren</div>
   </nav>
@@ -117,13 +119,13 @@
 
     <section class="slide" id="advantages" data-title="Vorteile" aria-hidden="true">
       <div class="slide-inner">
-        <p class="eyebrow reveal">04 · STÄRKEN</p><h2 class="reveal">Warum Teams<br><em>Tempo gewinnen.</em></h2>
+        <p class="eyebrow reveal">04 · STÄRKEN</p><h2 class="reveal">Warum Codex<br><em>mehr als Code schreibt.</em></h2>
         <div class="benefit-grid reveal">
-          <article class="big"><span>01</span><h3>Parallel statt sequenziell</h3><p>Mehrere Agenten arbeiten gleichzeitig in isolierten Worktrees. Vielnutzer erzeugen laut Quelle über 60 Stunden Agent-Laufzeit pro Tag.</p><div class="agents"><i>A1</i><i>A2</i><i>A3</i><i>A4</i></div></article>
-          <article><span>02</span><h3>Token-effizient</h3><p>Laut Ausgangsquelle bis zu viermal weniger Tokens bei Routineaufgaben.</p></article>
-          <article><span>03</span><h3>Nahtlos</h3><p>Ein Konto verbindet CLI, IDE, Desktop und Cloud.</p></article>
-          <article><span>04</span><h3>Kontrollierbar</h3><p>Sandboxing, Freigaben, Rollen und Audit-Trails für Teams.</p></article>
-          <article><span>05</span><h3>Offen & zugänglich</h3><p>Quelloffene CLI; Codex ist bereits im Plus-Abo ab 20 $ pro Monat enthalten.</p></article>
+          <article class="big"><span>01</span><h3>Delegieren statt vervollständigen</h3><p>Codex bearbeitet vollständige Entwicklungsaufgaben – von der Analyse über die Umsetzung bis zu Tests und Review.</p><div class="workflow-chain" aria-label="Plan, Code, Test, Review"><i>Plan</i><b>→</b><i>Code</i><b>→</b><i>Test</i><b>→</b><i>Review</i></div></article>
+          <article><span>02</span><h3>Projekt statt Einzelprompt</h3><p>Versteht Repository, Architektur, Konventionen und bestehende Abhängigkeiten.</p></article>
+          <article><span>03</span><h3>Nicht nur schreiben. Prüfen.</h3><p>Führt Befehle und Tests aus und verbessert Ergebnisse auf Basis der Rückmeldungen.</p></article>
+          <article><span>04</span><h3>Parallel statt sequenziell</h3><p>Mehrere Agenten bearbeiten unabhängige Aufgaben gleichzeitig.</p></article>
+          <article><span>05</span><h3>Im Workflow statt daneben</h3><p>Direkte Nutzung über IDE, CLI, Desktop, Cloud und Repository.</p></article>
         </div>
       </div>
     </section>
@@ -170,44 +172,42 @@
     <section class="slide" id="technical-problems" data-title="Technische Probleme" aria-hidden="true">
       <div class="slide-inner">
         <p class="eyebrow reveal">07 · TECHNISCHE PROBLEME</p>
-        <div class="split-heading"><h2 class="reveal">Wachstumsschmerz<br>oder <em>Systemrisiko?</em></h2><p class="lead reveal">Alltags-Bugs beeinträchtigen die Zuverlässigkeit. Sicherheitslücken sind gravierender: Daten, die der Agent liest, können zu Befehlen werden, die er ausführt.</p></div>
-        <div class="problem-layout reveal">
-          <article class="incident-panel">
-            <span class="panel-kicker">STABILITÄT & INFRASTRUKTUR</span>
-            <h3>Wiederkehrende Incidents</h3>
-            <ul><li>Fehlerhaftes Anti-Fraud-System drosselte Accounts und verbrauchte Credits zu schnell.</li><li>Ungelöste Störungen in FedRAMP-Workspaces seit Anfang Juli 2026.</li><li>WebSocket-, Tool-Calling-, Metadaten- und Windows-App-Fehler im Alltag.</li></ul>
-          </article>
-          <div class="security-findings">
-            <details open><summary><b>CVE-2025-61260</b><span>Command-Injection</span><i>+</i></summary><p>Implizit vertraute Projekt-Konfigurationen ermöglichten Befehlsausführung ohne Nutzerfreigabe.</p></details>
-            <details><summary><b>Token-Diebstahl</b><span>BeyondTrust</span><i>+</i></summary><p>Präparierte Branch-Namen mit unsichtbaren Unicode-Zeichen betrafen Web, CLI, SDK und IDE; inzwischen gepatcht.</p></details>
-            <details><summary><b>Sandbox-Escape</b><span>apply_patch</span><i>+</i></summary><p>Indirekte Prompt-Injection konnte die eigene Sicherheitskonfiguration überschreiben; der Bericht wurde als „informational“ geschlossen.</p></details>
-            <details><summary><b>Windows-Angriffswege</b><span>RCE & git.exe</span><i>+</i></summary><p>Gemeldet wurden Codeausführung über web.run sowie das automatische Laden einer bösartigen git.exe aus dem Projektordner.</p></details>
-            <details><summary><b>Datenabfluss</b><span>E-Mail-Exfiltration</span><i>+</i></summary><p>PromptArmor zeigte im April 2026 eine indirekte Prompt-Injection gegen sensible E-Mails im Standard-Berechtigungsmodus.</p></details>
-          </div>
+        <div class="split-heading"><h2 class="reveal">Schneller ist nicht<br>automatisch <em>besser.</em></h2><p class="lead reveal">Codex kann viel Code erzeugen. Ob daraus gute Software wird, hängt weiterhin von Kontext, Testumgebung und menschlicher Kontrolle ab.</p></div>
+        <div class="problem-grid reveal">
+          <article><span>01 · ERGEBNIS</span><h3>Sieht richtig aus. Ist es aber nicht.</h3><p>Code kann laufen und trotzdem falsche Ergebnisse liefern, Sonderfälle übersehen oder andere Funktionen beschädigen.</p></article>
+          <article><span>02 · KONTEXT</span><h3>Codex weiß nur, was wir erklären.</h3><p>Fehlende Regeln, Geschäftslogik oder Projektinformationen führen schnell zu unpassenden Lösungen.</p></article>
+          <article><span>03 · UMGEBUNG</span><h3>Cloud ist nicht gleich Produktion.</h3><p>Datenbanken, interne Dienste, Einstellungen oder echte Testdaten können im isolierten Container fehlen.</p></article>
+          <article><span>04 · ZUGRIFF</span><h3>Internet schafft Nutzen und Risiko.</h3><p>Ohne Zugriff fehlen aktuelle Informationen. Mit Zugriff steigen Gefahren durch schädliche Inhalte und Datenabfluss.</p></article>
+          <article><span>05 · UMFANG</span><h3>Große Aufgaben brauchen Planung.</h3><p>Komplexe Projekte müssen weiterhin in Architektur, Umsetzung, Tests und Review zerlegt werden.</p></article>
+          <article><span>06 · KONTROLLE</span><h3>Review wird zum Engpass.</h3><p>Je schneller Codex Code erzeugt, desto mehr Ergebnisse müssen Menschen verstehen, testen und freigeben.</p></article>
         </div>
-        <div class="rule reveal"><span>KURZFAZIT</span><strong>Funktionale Bugs sind Wachstumsschmerzen · durchlässige Daten-/Befehlsgrenzen sind ein strukturelles Risiko</strong></div>
+        <div class="responsibility-line reveal"><span>KERNAUSSAGE</span><strong>Codex verschiebt Arbeit vom Schreiben zum Planen, Prüfen und Verantworten.</strong><small>Die Verantwortung bleibt beim Menschen.</small></div>
       </div>
     </section>
 
     <section class="slide" id="value-chain" data-title="Wertschöpfungskette" aria-hidden="true">
       <div class="slide-inner">
         <p class="eyebrow reveal">08 · PORTER-WERTSCHÖPFUNGSKETTE</p>
-        <div class="split-heading"><h2 class="reveal">Wo entsteht<br><em>Wert?</em></h2><p class="lead reveal">Bei Codex ist die Kette vollständig digital. Wähle eine Aktivität, um ihren Beitrag und ihre konkreten Ressourcen zu untersuchen.</p></div>
+        <div class="split-heading"><h2 class="reveal">Wo entsteht<br><em>Wert?</em></h2><div class="lead-block reveal"><p class="lead">Porters Modell macht sichtbar, wie Codex aus Daten und Rechenleistung ein digitales Produkt und schließlich Kundennutzen erzeugt.</p></div></div>
         <div class="chain-explorer reveal">
-          <div class="chain-tabs" role="tablist" aria-label="Bereiche der Wertschöpfungskette">
-            <button class="active" role="tab" aria-selected="true" data-chain="inbound">Eingang</button>
-            <button role="tab" aria-selected="false" data-chain="operations">Operationen</button>
-            <button role="tab" aria-selected="false" data-chain="distribution">Distribution</button>
-            <button role="tab" aria-selected="false" data-chain="sales">Vertrieb</button>
-            <button role="tab" aria-selected="false" data-chain="service">Service</button>
-            <button role="tab" aria-selected="false" data-chain="support">Support-Aktivitäten</button>
+          <div class="chain-map" role="tablist" aria-label="Bereiche der Wertschöpfungskette">
+            <div class="chain-label"><span>PRIMÄRE AKTIVITÄTEN</span><small>direkte Wertschöpfung</small></div>
+            <div class="primary-chain">
+              <button class="active" role="tab" aria-selected="true" data-chain="inbound"><span>01</span>Eingangslogistik</button><i>→</i>
+              <button role="tab" aria-selected="false" data-chain="operations"><span>02</span>Operationen</button><i>→</i>
+              <button role="tab" aria-selected="false" data-chain="distribution"><span>03</span>Distribution</button><i>→</i>
+              <button role="tab" aria-selected="false" data-chain="sales"><span>04</span>Vertrieb</button><i>→</i>
+              <button role="tab" aria-selected="false" data-chain="service"><span>05</span>Service</button>
+            </div>
+            <div class="chain-label support-label"><span>UNTERSTÜTZENDE AKTIVITÄTEN</span><small>Basis für alle fünf Stufen</small></div>
+            <button class="support-chain" role="tab" aria-selected="false" data-chain="support"><span>06</span>Unternehmensinfrastruktur · Personal · Technologie · Beschaffung</button>
           </div>
           <div class="chain-panel" id="chainPanel">
             <div><span class="panel-kicker">PRIMÄRE AKTIVITÄT</span><h3>Eingangslogistik</h3><p>Trainingsdaten, lizenzierte Datensätze, Nutzer-Feedback und Rechenkapazität bilden den Input.</p></div>
             <ul><li>Code-Repositories & Datenlizenzen</li><li>Nvidia-GPUs</li><li>Azure-Cloud über Microsoft</li></ul>
           </div>
         </div>
-        <div class="value-insights reveal"><article><span>DIFFERENZIERUNG</span><p>Modellqualität, Token-Effizienz, Agenten-Autonomie und Bundling.</p></article><article><span>MARGEN-HEBEL</span><p>Nutzungsbasierte Credits koppeln Umsatz direkt an den Rechenaufwand.</p></article><article><span>SCHWACHSTELLE</span><p>Sandbox-Lücken werden zum Vertrauens- und Enterprise-Vertriebsrisiko.</p></article></div>
+        <div class="value-insights reveal"><article><span>WERT ENTSTEHT</span><p>vor allem durch Modellqualität, Effizienz und die selbstständige Arbeitsweise des Agenten.</p></article><article><span>UMSATZ ENTSTEHT</span><p>durch Abos, nutzungsbasierte Credits, API-Zugänge und Enterprise-Verträge.</p></article><article><span>RISIKO ENTSTEHT</span><p>wenn Sicherheits- und Zuverlässigkeitsprobleme das Vertrauen der Kunden schwächen.</p></article></div>
       </div>
     </section>
 
@@ -215,8 +215,36 @@
       <div class="slide-inner">
         <p class="eyebrow reveal">09 · FAZIT</p><h2 class="reveal">Codex ist kein<br><em>Autopilot.</em> Es ist ein<br><em>Multiplikator.</em></h2>
         <div class="verdict reveal"><div><span>BEST FIT</span><p>Teams mit vielen Routine- und Parallelisierungsaufgaben, die Tempo über Erstentwurf-Perfektion stellen.</p></div><div><span>EINSTIEG</span><p>Das Plus-Abo für 20 $ pro Monat reicht für einen ersten ausführlichen Test.</p></div><div><span>NON-NEGOTIABLE</span><p>Codex als privilegierte Identität behandeln: Zugriffe scopen, testen und Output reviewen.</p></div></div>
-        <div class="quiz reveal" id="quiz"><p>Was ist die wichtigste Rolle des Menschen?</p><div><button data-correct="false">Jeden Code selbst schreiben</button><button data-correct="true">Kontext geben & Ergebnisse prüfen</button><button data-correct="false">Nur Credits verwalten</button></div><output></output></div>
-        <div class="source-line reveal" title="openai.com/codex · developers.openai.com/codex/pricing · Gartner Magic Quadrant 2026 · unabhängige Praxistests"><span>Quellen</span> Codex_OpenAI.md · Stand Juli 2026 <button data-target-slide="0">↺ Neu starten</button></div>
+        <div class="source-line reveal"><span>TAKE-AWAY</span> Automatisierung ersetzt nicht die Verantwortung.</div>
+      </div>
+    </section>
+
+    <section class="slide quiz-slide" id="closing-quiz" data-title="Abschlussquiz" aria-hidden="true">
+      <div class="slide-inner">
+        <p class="eyebrow reveal">10 · ABSCHLUSSQUIZ</p>
+        <div class="split-heading"><h2 class="reveal">Codex-Check:<br><em>richtig oder falsch?</em></h2><p class="lead reveal">Drei Aussagen, zwei Möglichkeiten. Das Publikum stimmt ab – anschließend wird die Antwort direkt aufgelöst.</p></div>
+        <div class="quiz-game reveal" id="finalQuiz">
+          <article data-answer="false"><span>01</span><p>Codex übernimmt die Verantwortung für den erzeugten Code.</p><div><button data-choice="true">Richtig</button><button data-choice="false">Falsch</button></div><output>Falsch: Verantwortlich bleibt der Mensch beziehungsweise das Unternehmen.</output></article>
+          <article data-answer="true"><span>02</span><p>Mehrere Codex-Agenten können unabhängige Aufgaben parallel bearbeiten.</p><div><button data-choice="true">Richtig</button><button data-choice="false">Falsch</button></div><output>Richtig: Parallele Agenten sind eine der zentralen Stärken.</output></article>
+          <article data-answer="true"><span>03</span><p>Guter Projektkontext und Tests verbessern die Qualität der Ergebnisse.</p><div><button data-choice="true">Richtig</button><button data-choice="false">Falsch</button></div><output>Richtig: Kontext, klare Regeln und Tests bleiben entscheidend.</output></article>
+          <div class="quiz-score"><span>ERGEBNIS</span><strong id="quizScore">0 / 3</strong><button id="quizReset">↺ Nochmal spielen</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide sources-slide" id="sources" data-title="Quellen" aria-hidden="true">
+      <div class="slide-inner">
+        <p class="eyebrow reveal">11 · QUELLEN</p>
+        <div class="split-heading"><h2 class="reveal">Grundlage<br>des <em>Deep-Dives.</em></h2><p class="lead reveal">Verwendete Produktinformationen, Preisangaben, technische Dokumentation und projektinterne Arbeitsgrundlagen. Stand: Juli 2026.</p></div>
+        <div class="sources-grid reveal">
+          <a href="https://openai.com/codex/" target="_blank" rel="noopener noreferrer"><span>01 · PRODUKT</span><h3>OpenAI Codex</h3><p>Produktübersicht, Funktionen und Einsatzbereiche.</p><b>openai.com/codex ↗</b></a>
+          <a href="https://developers.openai.com/codex/pricing/" target="_blank" rel="noopener noreferrer"><span>02 · PREISE</span><h3>Codex Pricing</h3><p>Pläne, Nutzungslimits und Abrechnungsmodell.</p><b>developers.openai.com ↗</b></a>
+          <a href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer"><span>03 · CODE</span><h3>Open-Source-CLI</h3><p>Repository, Releases, Issues und Community.</p><b>github.com/openai/codex ↗</b></a>
+          <article><span>04 · MARKT</span><h3>Gartner & Praxistests</h3><p>Markteinordnung, Tool-Vergleiche und unabhängige Erfahrungsberichte.</p><b>Stand Juli 2026</b></article>
+          <article><span>05 · INHALT</span><h3>Codex_OpenAI.md</h3><p>Inhaltliche Hauptquelle und Struktur der Präsentation.</p><b>Projektdatei</b></article>
+          <article><span>06 · ARBEITSGRUNDLAGEN</span><h3>Lokale Vorlagen</h3><p>„Technische Probleme.txt“ und „Vorteile.png“ als Vorlagen für die Foliengestaltung.</p><b>Projektdateien</b></article>
+        </div>
+        <div class="source-line reveal"><span>ENDE</span> Vielen Dank für die Aufmerksamkeit. <button data-target-slide="0">↺ Präsentation neu starten</button></div>
       </div>
     </section>
   </main>
