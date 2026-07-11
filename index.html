@@ -12,7 +12,7 @@
   <header class="topbar">
     <a class="brand" href="#start" aria-label="Zur Startfolie"><span class="brand-mark">C</span><span>CODEX / DEEP DIVE</span></a>
     <div class="top-actions">
-      <span class="slide-count" aria-live="polite"><b id="currentSlide">01</b> / <span id="totalSlides">08</span></span>
+      <span class="slide-count" aria-live="polite"><b id="currentSlide">01</b> / <span id="totalSlides">10</span></span>
       <button class="icon-button" id="themeToggle" aria-label="Farbschema wechseln" title="Farbschema wechseln">◐</button>
       <button class="menu-button" id="menuToggle" aria-expanded="false" aria-controls="chapterNav"><span></span><span></span></button>
     </div>
@@ -28,7 +28,9 @@
       <li><button data-target="4"><span>05</span>Vorteile</button></li>
       <li><button data-target="5"><span>06</span>Nachteile</button></li>
       <li><button data-target="6"><span>07</span>Geschäftsmodell</button></li>
-      <li><button data-target="7"><span>08</span>Fazit</button></li>
+      <li><button data-target="7"><span>08</span>Technische Probleme</button></li>
+      <li><button data-target="8"><span>09</span>Wertschöpfungskette</button></li>
+      <li><button data-target="9"><span>10</span>Fazit</button></li>
     </ol>
     <div class="nav-hint">↑ ↓ oder Leertaste zum Navigieren</div>
   </nav>
@@ -40,7 +42,7 @@
         <div>
           <p class="eyebrow reveal">AI TOOL DEEP-DIVE · JULI 2026</p>
           <h1 class="reveal">Code nicht nur<br><em>vorschlagen.</em><br>Code erledigen.</h1>
-          <p class="hero-copy reveal">Codex von OpenAI ist ein agentischer Coding-Assistent, der Aufgaben selbstständig plant, umsetzt und prüft.</p>
+          <p class="hero-copy reveal">Codex von OpenAI ist seit Mai 2025 ein agentischer Coding-Assistent, der Aufgaben selbstständig plant, umsetzt, testet und als Review-Ergebnis bereitstellt.</p>
           <button class="primary-button reveal" data-next>Deep-Dive starten <span>→</span></button>
         </div>
         <div class="terminal-card reveal" aria-label="Illustration eines Codex Arbeitsablaufs">
@@ -61,7 +63,7 @@
     <section class="slide" id="definition" data-title="Was ist Codex?" aria-hidden="true">
       <div class="slide-inner">
         <p class="eyebrow reveal">01 · EINORDNUNG</p>
-        <div class="split-heading"><h2 class="reveal">Vom Copiloten<br>zum <em>Agenten.</em></h2><p class="lead reveal">Codex gibt nicht nur einzelne Codevorschläge. Es kann einen Auftrag als Prozess übernehmen: verstehen, planen, ausführen und verifizieren.</p></div>
+        <div class="split-heading"><h2 class="reveal">Vom Copiloten<br>zum <em>Agenten.</em></h2><p class="lead reveal">Auf Basis der GPT-5.x-Codex-Modelle übernimmt Codex ganze Aufträge: Repository lesen, planen, Code ändern, Terminal nutzen, testen und einen Pull Request vorbereiten.</p></div>
         <div class="process reveal" aria-label="Agentischer Arbeitsprozess">
           <div><span>01</span><b>Lesen</b><small>Repository & Regeln</small></div><i>→</i>
           <div><span>02</span><b>Planen</b><small>Aufgabe zerlegen</small></div><i>→</i>
@@ -91,7 +93,7 @@
             <button role="tab" aria-selected="false" data-interface="cloud"><span>☁</span>Cloud</button>
           </div>
           <div class="interface-panel" id="interfacePanel">
-            <div><p class="panel-kicker">TERMINAL-NATIV</p><h3>CLI</h3><p>Open Source und direkt im Entwicklungsfluss. Codex liest Dateien, führt Befehle aus und arbeitet mit dem lokalen Repository.</p><ul><li>Ideal für Terminal-Workflows</li><li>Installation via npm oder Homebrew</li><li>Transparenter Agent-Loop</li></ul></div>
+            <div><p class="panel-kicker">TERMINAL-NATIV</p><h3>CLI</h3><p>In Rust entwickelt, Open Source und direkt im Entwicklungsfluss. Codex liest Dateien, führt Befehle aus und arbeitet mit dem lokalen Repository.</p><ul><li>Installation via npm oder Homebrew</li><li>Über 400 Contributors seit April 2025</li><li>Transparenter Agent-Loop</li></ul></div>
             <div class="mini-window"><div>$ codex</div><p>› Was möchtest du bauen?</p><span class="cursor"></span></div>
           </div>
         </div>
@@ -106,10 +108,10 @@
         <div class="task-board reveal">
           <article class="task-card featured"><span class="tag">BUILD</span><div class="task-icon">↗</div><h3>Feature-Entwicklung</h3><p>Vom Architektur-Sketch bis zu CRUD, API und UI.</p><div class="meter"><i style="--value:88%"></i></div><small>Hoher Autonomiegrad</small></article>
           <article class="task-card"><span class="tag">SCALE</span><div class="task-icon">⑂</div><h3>Batch-Arbeit</h3><p>Mehrere isolierte Tasks parallel in Worktrees bearbeiten.</p><div class="meter"><i style="--value:94%"></i></div><small>Sehr gut parallelisierbar</small></article>
-          <article class="task-card"><span class="tag">SECURE</span><div class="task-icon">◇</div><h3>Security</h3><p>Bedrohungsmodelle, Schwachstellensuche und Fix-Vorschläge.</p><div class="meter"><i style="--value:76%"></i></div><small>Review bleibt notwendig</small></article>
-          <article class="task-card"><span class="tag">BEYOND</span><div class="task-icon">✦</div><h3>Wissensarbeit</h3><p>Mit Skills auch Präsentationen, Tabellen und Recherche.</p><div class="meter"><i style="--value:71%"></i></div><small>Flexibel erweiterbar</small></article>
+          <article class="task-card"><span class="tag">SECURE</span><div class="task-icon">◇</div><h3>Codex Security</h3><p>Bedrohungsmodelle, Schwachstellensuche und Fix-Vorschläge.</p><div class="meter"><i style="--value:76%"></i></div><small>Über 1 Mio. Commits in der Beta</small></article>
+          <article class="task-card"><span class="tag">BEYOND</span><div class="task-icon">✦</div><h3>Wissensarbeit</h3><p>Mit Skills auch Präsentationen, Tabellen und Recherche.</p><div class="meter"><i style="--value:71%"></i></div><small>Auch im GDPval-Benchmark</small></article>
         </div>
-        <div class="callout reveal"><strong>80,6 %</strong><span>der Anfragen entsprechen laut Quelle mehr als 30 Minuten menschlicher Arbeit.</span></div>
+        <div class="callout reveal"><strong>80,6 %</strong><span>der Anfragen entsprechen mehr als 30 Minuten menschlicher Arbeit – 25,6 % sogar mehr als acht Stunden.</span></div>
       </div>
     </section>
 
@@ -117,11 +119,11 @@
       <div class="slide-inner">
         <p class="eyebrow reveal">04 · STÄRKEN</p><h2 class="reveal">Warum Teams<br><em>Tempo gewinnen.</em></h2>
         <div class="benefit-grid reveal">
-          <article class="big"><span>01</span><h3>Parallel statt sequenziell</h3><p>Mehrere Agenten arbeiten gleichzeitig an isolierten Aufgaben. Menschen wechseln vom Tippen zum Steuern und Prüfen.</p><div class="agents"><i>A1</i><i>A2</i><i>A3</i><i>A4</i></div></article>
+          <article class="big"><span>01</span><h3>Parallel statt sequenziell</h3><p>Mehrere Agenten arbeiten gleichzeitig in isolierten Worktrees. Vielnutzer erzeugen laut Quelle über 60 Stunden Agent-Laufzeit pro Tag.</p><div class="agents"><i>A1</i><i>A2</i><i>A3</i><i>A4</i></div></article>
           <article><span>02</span><h3>Token-effizient</h3><p>Laut Ausgangsquelle bis zu viermal weniger Tokens bei Routineaufgaben.</p></article>
           <article><span>03</span><h3>Nahtlos</h3><p>Ein Konto verbindet CLI, IDE, Desktop und Cloud.</p></article>
           <article><span>04</span><h3>Kontrollierbar</h3><p>Sandboxing, Freigaben, Rollen und Audit-Trails für Teams.</p></article>
-          <article><span>05</span><h3>Offene CLI</h3><p>Der quelloffene Agent-Loop schafft Transparenz und Erweiterbarkeit.</p></article>
+          <article><span>05</span><h3>Offen & zugänglich</h3><p>Quelloffene CLI; Codex ist bereits im Plus-Abo ab 20 $ pro Monat enthalten.</p></article>
         </div>
       </div>
     </section>
@@ -131,10 +133,10 @@
         <p class="eyebrow reveal">05 · GRENZEN</p>
         <div class="split-heading"><h2 class="reveal">Autonom heißt nicht<br><em>unkontrolliert.</em></h2><p class="lead reveal">Mehr Handlungsspielraum erzeugt mehr Hebel – aber auch eine größere Angriffsfläche. Der Mensch bleibt die letzte Instanz.</p></div>
         <div class="risk-list reveal">
-          <details open><summary><span>01</span><b>Qualität variiert</b><i>+</i></summary><p>Komplexe Refactorings brauchen häufig eine weitere Runde. Ein fertiger Diff ist ein Review-Angebot, kein Freifahrtschein.</p></details>
-          <details><summary><span>02</span><b>Kosten sind schwer vorhersehbar</b><i>+</i></summary><p>Tokenbasierte Abrechnung skaliert mit der Komplexität; ähnliche Aufgaben können sehr unterschiedliche Credits verbrauchen.</p></details>
+          <details open><summary><span>01</span><b>Qualität variiert</b><i>+</i></summary><p>In blinden Vergleichstests bevorzugten Reviewer Claude Code gegenüber Codex etwa 2:1. Komplexe Refactorings brauchen häufig eine weitere Runde.</p></details>
+          <details><summary><span>02</span><b>Kosten sind schwer vorhersehbar</b><i>+</i></summary><p>Seit April 2026 wird tokenbasiert und ohne Kostenvorschau abgerechnet; ein komplexer Task kann neunmal mehr Credits als ein einfacher verbrauchen.</p></details>
           <details><summary><span>03</span><b>Kontext hat Grenzen</b><i>+</i></summary><p>Große Regelwerke müssen strukturiert werden. Laut Quelle wird AGENTS.md bei 32 KiB abgeschnitten.</p></details>
-          <details><summary><span>04</span><b>Limits unterbrechen den Flow</b><i>+</i></summary><p>Rollierende Nutzungsfenster können Vielnutzer bis zur Erneuerung des Kontingents ausbremsen.</p></details>
+          <details><summary><span>04</span><b>Limits unterbrechen den Flow</b><i>+</i></summary><p>Rate-Limits in rollierenden 5-Stunden-Fenstern können Vielnutzer bis zur Erneuerung des Kontingents ausbremsen.</p></details>
           <details><summary><span>05</span><b>Produkt im Wandel</b><i>+</i></summary><p>Preis- und Feature-Änderungen erschweren eine langfristig stabile Budgetplanung.</p></details>
         </div>
         <div class="rule reveal"><span>HUMAN IN THE LOOP</span><strong>Zugriff begrenzen → Output prüfen → Tests verlangen</strong></div>
@@ -148,28 +150,73 @@
           <div class="pricing">
             <div class="pricing-head"><h3>Plan-Navigator</h3><span>Richtwerte · Quelle 07/2026</span></div>
             <div class="plan-options" role="radiogroup">
-              <button data-plan="Free" data-price="0"><b>Free</b><span>0 $</span></button>
-              <button data-plan="Go" data-price="8"><b>Go</b><span>8 $</span></button>
-              <button class="active" data-plan="Plus" data-price="20"><b>Plus</b><span>20 $</span></button>
-              <button data-plan="Pro" data-price="100"><b>Pro</b><span>100–200 $</span></button>
-              <button data-plan="Business" data-price="20"><b>Business</b><span>ab 20 $</span></button>
+              <button data-plan="Free" data-price-min="0"><b>Free</b><span>0 $</span></button>
+              <button data-plan="Go" data-price-min="8"><b>Go</b><span>8 $</span></button>
+              <button class="active" data-plan="Plus" data-price-min="20"><b>Plus</b><span>20 $</span></button>
+              <button data-plan="Pro" data-price-min="100" data-price-max="200"><b>Pro</b><span>100–200 $</span></button>
+              <button data-plan="Business" data-price-min="20" data-prefix="ab "><b>Business</b><span>ab 20 $</span></button>
+              <button data-plan="Enterprise" data-custom="true"><b>Enterprise</b><span>individuell</span></button>
             </div>
             <label for="seats">Teamgröße <output id="seatOutput">5 Personen</output></label>
             <input id="seats" type="range" min="1" max="50" value="5">
             <div class="estimate"><span>Basispreis pro Monat*</span><strong id="estimate">100 $</strong></div>
-            <small>*Ohne zusätzliche nutzungsbasierte Credits; Pro mit unterem Richtwert.</small>
+            <small id="estimateNote">*Ohne zusätzliche nutzungsbasierte Credits.</small>
           </div>
-          <div class="revenue-model"><h3>Vier Umsatzhebel</h3><ol><li><span>01</span><div><b>Freemium-Funnel</b><p>Vom Testzugang zum Abo.</p></div></li><li><span>02</span><div><b>Token-Credits</b><p>Kosten folgen dem Modellaufwand.</p></div></li><li><span>03</span><div><b>API-Nutzung</b><p>Separater Kanal für CI/CD.</p></div></li><li><span>04</span><div><b>Enterprise</b><p>Verträge, Governance, Integratoren.</p></div></li></ol></div>
+          <div class="revenue-model"><h3>Vier Umsatzhebel</h3><ol><li><span>01</span><div><b>Freemium-Funnel</b><p>Free/Go führen zu Plus und Pro.</p></div></li><li><span>02</span><div><b>Token-Credits</b><p>Input, Cache und Output zählen.</p></div></li><li><span>03</span><div><b>API-Nutzung</b><p>Separater Kanal für CI/CD.</p></div></li><li><span>04</span><div><b>Enterprise</b><p>Verträge plus Systemintegratoren.</p></div></li></ol></div>
         </div>
+      </div>
+    </section>
+
+    <section class="slide" id="technical-problems" data-title="Technische Probleme" aria-hidden="true">
+      <div class="slide-inner">
+        <p class="eyebrow reveal">07 · TECHNISCHE PROBLEME</p>
+        <div class="split-heading"><h2 class="reveal">Wachstumsschmerz<br>oder <em>Systemrisiko?</em></h2><p class="lead reveal">Alltags-Bugs beeinträchtigen die Zuverlässigkeit. Sicherheitslücken sind gravierender: Daten, die der Agent liest, können zu Befehlen werden, die er ausführt.</p></div>
+        <div class="problem-layout reveal">
+          <article class="incident-panel">
+            <span class="panel-kicker">STABILITÄT & INFRASTRUKTUR</span>
+            <h3>Wiederkehrende Incidents</h3>
+            <ul><li>Fehlerhaftes Anti-Fraud-System drosselte Accounts und verbrauchte Credits zu schnell.</li><li>Ungelöste Störungen in FedRAMP-Workspaces seit Anfang Juli 2026.</li><li>WebSocket-, Tool-Calling-, Metadaten- und Windows-App-Fehler im Alltag.</li></ul>
+          </article>
+          <div class="security-findings">
+            <details open><summary><b>CVE-2025-61260</b><span>Command-Injection</span><i>+</i></summary><p>Implizit vertraute Projekt-Konfigurationen ermöglichten Befehlsausführung ohne Nutzerfreigabe.</p></details>
+            <details><summary><b>Token-Diebstahl</b><span>BeyondTrust</span><i>+</i></summary><p>Präparierte Branch-Namen mit unsichtbaren Unicode-Zeichen betrafen Web, CLI, SDK und IDE; inzwischen gepatcht.</p></details>
+            <details><summary><b>Sandbox-Escape</b><span>apply_patch</span><i>+</i></summary><p>Indirekte Prompt-Injection konnte die eigene Sicherheitskonfiguration überschreiben; der Bericht wurde als „informational“ geschlossen.</p></details>
+            <details><summary><b>Windows-Angriffswege</b><span>RCE & git.exe</span><i>+</i></summary><p>Gemeldet wurden Codeausführung über web.run sowie das automatische Laden einer bösartigen git.exe aus dem Projektordner.</p></details>
+            <details><summary><b>Datenabfluss</b><span>E-Mail-Exfiltration</span><i>+</i></summary><p>PromptArmor zeigte im April 2026 eine indirekte Prompt-Injection gegen sensible E-Mails im Standard-Berechtigungsmodus.</p></details>
+          </div>
+        </div>
+        <div class="rule reveal"><span>KURZFAZIT</span><strong>Funktionale Bugs sind Wachstumsschmerzen · durchlässige Daten-/Befehlsgrenzen sind ein strukturelles Risiko</strong></div>
+      </div>
+    </section>
+
+    <section class="slide" id="value-chain" data-title="Wertschöpfungskette" aria-hidden="true">
+      <div class="slide-inner">
+        <p class="eyebrow reveal">08 · PORTER-WERTSCHÖPFUNGSKETTE</p>
+        <div class="split-heading"><h2 class="reveal">Wo entsteht<br><em>Wert?</em></h2><p class="lead reveal">Bei Codex ist die Kette vollständig digital. Wähle eine Aktivität, um ihren Beitrag und ihre konkreten Ressourcen zu untersuchen.</p></div>
+        <div class="chain-explorer reveal">
+          <div class="chain-tabs" role="tablist" aria-label="Bereiche der Wertschöpfungskette">
+            <button class="active" role="tab" aria-selected="true" data-chain="inbound">Eingang</button>
+            <button role="tab" aria-selected="false" data-chain="operations">Operationen</button>
+            <button role="tab" aria-selected="false" data-chain="distribution">Distribution</button>
+            <button role="tab" aria-selected="false" data-chain="sales">Vertrieb</button>
+            <button role="tab" aria-selected="false" data-chain="service">Service</button>
+            <button role="tab" aria-selected="false" data-chain="support">Support-Aktivitäten</button>
+          </div>
+          <div class="chain-panel" id="chainPanel">
+            <div><span class="panel-kicker">PRIMÄRE AKTIVITÄT</span><h3>Eingangslogistik</h3><p>Trainingsdaten, lizenzierte Datensätze, Nutzer-Feedback und Rechenkapazität bilden den Input.</p></div>
+            <ul><li>Code-Repositories & Datenlizenzen</li><li>Nvidia-GPUs</li><li>Azure-Cloud über Microsoft</li></ul>
+          </div>
+        </div>
+        <div class="value-insights reveal"><article><span>DIFFERENZIERUNG</span><p>Modellqualität, Token-Effizienz, Agenten-Autonomie und Bundling.</p></article><article><span>MARGEN-HEBEL</span><p>Nutzungsbasierte Credits koppeln Umsatz direkt an den Rechenaufwand.</p></article><article><span>SCHWACHSTELLE</span><p>Sandbox-Lücken werden zum Vertrauens- und Enterprise-Vertriebsrisiko.</p></article></div>
       </div>
     </section>
 
     <section class="slide finale" id="conclusion" data-title="Fazit" aria-hidden="true">
       <div class="slide-inner">
-        <p class="eyebrow reveal">07 · FAZIT</p><h2 class="reveal">Codex ist kein<br><em>Autopilot.</em> Es ist ein<br><em>Multiplikator.</em></h2>
-        <div class="verdict reveal"><div><span>BEST FIT</span><p>Teams mit vielen klaren, parallelen Routine- und Entwicklungsaufgaben.</p></div><div><span>TRADE-OFF</span><p>Mehr Geschwindigkeit gegen variable Qualität und schwer planbare Nutzungskosten.</p></div><div><span>NON-NEGOTIABLE</span><p>Zugriffe begrenzen, Änderungen testen und jeden produktiven Output reviewen.</p></div></div>
+        <p class="eyebrow reveal">09 · FAZIT</p><h2 class="reveal">Codex ist kein<br><em>Autopilot.</em> Es ist ein<br><em>Multiplikator.</em></h2>
+        <div class="verdict reveal"><div><span>BEST FIT</span><p>Teams mit vielen Routine- und Parallelisierungsaufgaben, die Tempo über Erstentwurf-Perfektion stellen.</p></div><div><span>EINSTIEG</span><p>Das Plus-Abo für 20 $ pro Monat reicht für einen ersten ausführlichen Test.</p></div><div><span>NON-NEGOTIABLE</span><p>Codex als privilegierte Identität behandeln: Zugriffe scopen, testen und Output reviewen.</p></div></div>
         <div class="quiz reveal" id="quiz"><p>Was ist die wichtigste Rolle des Menschen?</p><div><button data-correct="false">Jeden Code selbst schreiben</button><button data-correct="true">Kontext geben & Ergebnisse prüfen</button><button data-correct="false">Nur Credits verwalten</button></div><output></output></div>
-        <div class="source-line reveal"><span>Grundlage</span> Codex_OpenAI.md · Stand Juli 2026 <button data-target-slide="0">↺ Neu starten</button></div>
+        <div class="source-line reveal" title="openai.com/codex · developers.openai.com/codex/pricing · Gartner Magic Quadrant 2026 · unabhängige Praxistests"><span>Quellen</span> Codex_OpenAI.md · Stand Juli 2026 <button data-target-slide="0">↺ Neu starten</button></div>
       </div>
     </section>
   </main>

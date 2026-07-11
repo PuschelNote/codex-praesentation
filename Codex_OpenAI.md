@@ -108,7 +108,64 @@ Stand: Juli 2026
 
 ---
 
-## 7. Fazit
+## 7. Technische Probleme
+
+*Von normalen Wachstumsschmerzen bis zu strukturellen Sicherheitslücken*
+
+### Stabilität & Infrastruktur
+
+- **Wiederkehrende Incidents** – Ende Juni 2026 verbrauchten Nutzungslimits schneller als erwartet Credits; Ursache war ein fehlerhaftes Anti-Fraud-System, das Accounts fälschlich drosselte.
+- **FedRAMP-Ausfälle** – seit Anfang Juli 2026 laufende, noch ungelöste Störungen in FedRAMP-Workspaces (Codex, Analytics, Compliance-Logs).
+- **Häufige Alltags-Bugs** – WebSocket-Verbindungsabbrüche, Tool-Calling-Fehler, Modell-Metadaten-Mismatches bei neuen Modellversionen, Windows-spezifische Bugs in der Desktop-App (täglich mehrere neue GitHub-Issues).
+
+### Sicherheitslücken – der gravierendste Problemblock
+
+- **CVE-2025-61260** – Command-Injection über implizit vertraute Projekt-Konfigurationen; erlaubte Befehlsausführung ohne Nutzerfreigabe.
+- **BeyondTrust-Disclosure (Dez. 2025)** – GitHub-Zugriffstoken-Diebstahl über einen präparierten Branch-Namen mit unsichtbaren Unicode-Zeichen; betraf ChatGPT-Web, CLI, SDK und IDE-Extension gleichzeitig. Wurde gepatcht.
+- **Sandbox-Escape via `apply_patch`** (Cymulate, Mai 2026) – fehlende Zugriffskontrolle erlaubte das Überschreiben der eigenen `.codex`-Sicherheitskonfiguration, ausgelöst durch indirekte Prompt-Injection (z. B. via README). OpenAI schloss den Bericht als „informational", ohne das Kernproblem zu beheben.
+- **Windows-RCE über `web.run`** – eine präparierte, indexierte Webseite konnte über die Websuche-Funktion Code außerhalb der Sandbox ausführen, ganz ohne weitere Nutzerinteraktion. Von OpenAI als „nicht reproduzierbar" abgelehnt.
+- **git.exe-Hijacking (Windows Desktop App)** – bösartige `git.exe` im Projektordner wird automatisch mit Entwicklerrechten ausgeführt. Von OpenAI als „Not Applicable" abgelehnt.
+- **E-Mail-Exfiltration** (April 2026, PromptArmor) – indirekte Prompt-Injection in der Codex-Desktop-App konnte sensible E-Mails ohne Nutzerinteraktion abgreifen, im Standard-Berechtigungsmodus.
+- Übergeordnet zeigen Forscher (z. B. der „Friendly Fire"-Exploit des AI Now Institute), dass auch KI-gestützte Auto-Approval-Klassifizierer gezielt mit gefälschten „harmlosen" Binärdateien getäuscht werden können.
+
+**Kurzfazit:** Funktionale Bugs sind normale Wachstumsschmerzen eines schnell iterierenden Tools. Die Sicherheitsbefunde sind strukturell – die Grenze zwischen „Daten, die der Agent liest" und „Befehle, die er ausführt" ist durchlässig, und mehrere gemeldete Schwachstellen wurden von OpenAI als „out of scope" oder „nicht reproduzierbar" abgelehnt.
+
+---
+
+## 8. Wertschöpfungskette nach Porter
+
+*Angewandt auf Codex/OpenAI*
+
+Porters Modell unterscheidet primäre Aktivitäten (direkte Wertschöpfung am Produkt) und unterstützende Aktivitäten (Infrastruktur dahinter). Bei einem KI-Produkt wie Codex sind die Aktivitäten digital statt physisch, das Prinzip bleibt aber übertragbar.
+
+### Primäre Aktivitäten
+
+| Stufe | Bei Codex konkret |
+|---|---|
+| **Eingangslogistik** | Trainingsdaten (Code-Repositories, lizenzierte Datensätze, Nutzer-Feedback), Rechenkapazität (Nvidia-GPUs, Azure-Cloud über Microsoft-Partnerschaft) |
+| **Operationen** | Training & Fine-Tuning der GPT-5.x-Codex-Modelle, RLHF, Agenten-Loop-Logik (Tool-Calling, Multi-Agent-Orchestrierung), Sandbox-/Approval-Architektur |
+| **Ausgangslogistik** | Rein digitale Distribution: CLI-Release über npm/Homebrew, Desktop-App-Updates, IDE-Extension-Marktplätze, Cloud-Bereitstellung über ChatGPT – kein physischer Vertrieb nötig |
+| **Marketing & Vertrieb** | Freemium-Funnel (Free/Go/Plus), Bundling in ChatGPT-Abos, Open-Source-Community als Marketinghebel, Enterprise-Vertrieb über Systemintegratoren (Accenture, Capgemini, PwC, TCS) |
+| **Kundendienst** | Status-Page & Incident-Kommunikation, Changelog-Pflege, Security-Advisories, Bugcrowd-Bug-Bounty, GitHub-Issue-Bearbeitung, Enterprise-Support |
+
+### Unterstützende Aktivitäten
+
+| Stufe | Bei Codex konkret |
+|---|---|
+| **Unternehmensinfrastruktur** | OpenAI-Governance-Struktur, Kapitalpartnerschaft mit Microsoft, Compliance-Aufbau (FedRAMP, SOC2), Rechtsabteilung |
+| **Personalmanagement** | Rekrutierung von KI-Forschern und Sicherheitsingenieuren in einem umkämpften Talentmarkt, interne Security-Research-Teams |
+| **Technologieentwicklung** | Kern-F&E: Modellarchitektur, Agenten-Sicherheitsforschung, Sandbox-Engineering (OS-Primitive wie Bubblewrap/seccomp) – bestehende Lücken zwischen Forschung und robuster Umsetzung |
+| **Beschaffung** | GPU-/Compute-Einkauf (Nvidia, Cloud-Kapazität), Lizenzierung von Trainingsdaten, Aufbau des Plugin-/MCP-Ökosystems, externe Sicherheitsforschung über Bug-Bounty |
+
+### Einordnung: Wo entsteht der Wert – und wo das Risiko?
+
+- **Differenzierung** entsteht vor allem in *Operationen* (Modellqualität, Token-Effizienz, Agenten-Autonomie) und *Marketing/Vertrieb* (Bundling-Strategie, niedrige Einstiegshürde über ChatGPT Plus).
+- **Margen-Hebel**: Die nutzungsbasierte Abrechnung (seit April 2026) verschiebt Wertabschöpfung direkt in die Ausgangslogistik/Vertrieb – Kosten skalieren nutzungsgenau mit dem Rechenaufwand in der Operationsstufe.
+- **Schwachstelle der Kette**: Die technischen Probleme liegen auffällig konzentriert in der *Technologieentwicklung* (Sandbox-Design) und schlagen unmittelbar auf den *Kundendienst* durch (öffentlich dokumentierte, teils ungelöste CVEs, abgelehnte Bug-Reports). Für ein Tool, das aktiv Shell-Befehle ausführt und Zugriff auf Zugangsdaten hat, ist das ein direktes Vertrauensrisiko für die gesamte Wertschöpfungskette – nicht nur ein technisches Detail, sondern ein Faktor, der Enterprise-Kaufentscheidungen (Vertriebsstufe) beeinflusst.
+
+---
+
+## 9. Fazit
 
 Codex hat sich vom experimentellen Tool zur produktionsreifen Infrastruktur entwickelt: schnell, tokeneffizient und über CLI, IDE, App und Cloud konsistent nutzbar. Der Preis dafür ist unvorhersehbare Kostenskalierung, eine im Vergleich noch etwas schwächere Codequalität und die fortbestehende Pflicht zum menschlichen Review.
 
